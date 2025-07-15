@@ -3,31 +3,31 @@ import { ArrowUpRight } from "lucide-react";
 
 const Services = () => {
   return (
-    <div id="services" className="min-h-screen bg-gray-50 flex ">
-      {/* Sidebar Navigation */}
+    <div id="services" className="min-h-screen bg-gray-50 flex">
       <div className="w-48 mt-56 ml-16">
         <Sidebar />
       </div>
 
-      {/* Main Content */}
       <div className="flex-1 p-8">
-        {/* Header with Title and CTA Button */}
-        <div className="flex justify-between items-start mb-16">
+        <div className="flex justify-between items-start mb-16 m-18">
           <h1 className="text-6xl font-bold text-black">Services</h1>
           <button className="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-sm flex items-center gap-2">
             Start with my Insurance
-            <ArrowUpRight className="w-4 h-4" />
+            <div className="bg-white rounded-full p-1">
+              <ArrowUpRight className="w-4 h-4 text-teal-600" />
+            </div>
           </button>
         </div>
 
-        {/* Subtitle */}
         <div className="mb-16">
-          <h2 className="text-2xl font-medium text-gray-800 mb-8">
-            Your Personalized Roadmap
-          </h2>
+          <div className="flex items-center space-x-4 mb-6">
+            <h3 className="text-xl text-gray-700 font-semibold whitespace-nowrap">
+              Your Personalized Roadmap
+            </h3>
+            <div className="h-px w-[500px] ml-12 bg-gray-300" />
+          </div>
         </div>
 
-        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl">
           {/* Service 01 */}
           <div>

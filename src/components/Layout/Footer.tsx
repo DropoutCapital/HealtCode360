@@ -1,13 +1,18 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, RotateCw } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-gray-50 px-8 py-16 mt-6">
       <div className="max-w-7xl mx-auto">
         {/* Logo */}
         <div className="mb-16">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-700 leading-none">
-            healthcode360
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-slate-700 leading-none flex items-center gap-2">
+            healthcode36
+            <span className="text-slate-700">
+              <RotateCw size={90} />
+            </span>
           </h1>
         </div>
 
@@ -118,13 +123,15 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-gray-200">
           <div className="text-gray-700 mb-4 md:mb-0">
-            <p className="font-medium">2025 HEALTCODE360°</p>
+            <p className="font-medium"> &copy; {currentYear} HEALTCODE360°</p>
             <p>ALL RIGHTS RESERVED</p>
           </div>
 
           <button className="bg-teal-600 text-white px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium flex items-center gap-2">
             Start with my Insurance
-            <ArrowUpRight className="w-4 h-4" />
+            <div className="bg-white rounded-full p-1">
+              <ArrowUpRight className="w-5 h-5 text-teal-600" />
+            </div>
           </button>
         </div>
       </div>
