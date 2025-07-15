@@ -137,6 +137,23 @@ function Register() {
     });
   };
 
+  const ProgressBar = () => {
+    const totalSteps = 5;
+
+    return (
+      <div className="flex justify-center gap-2 mb-12 transform transition-all duration-500 ease-out">
+        {Array.from({ length: totalSteps }, (_, index) => (
+          <div
+            key={index}
+            className={`h-1 w-16 rounded-full transition-all duration-300 ${
+              index < currentStep ? "bg-teal-600" : "bg-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    );
+  };
+
   // Pantalla inicial
   if (currentStep === 0) {
     return (
@@ -372,20 +389,24 @@ function Register() {
   const stepContent = getStepContent();
 
   // Pasos del formulario
+
   return (
     <div className="min-h-screen relative overflow-hidden">
       <div className="absolute top-8 left-8 transform transition-all duration-500 ease-out">
         <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
           <span>HealtCode</span>
           <span className="text-teal-600 font-bold flex items-center space-x-0.5">
-            <span>360</span>
-            <RotateCcw className="w-7 h-7 rotate-180" strokeWidth={3} />
+            <span>36</span>
+            <RotateCcw className="w-6 h-6 rotate-180" strokeWidth={3} />
           </span>
         </h1>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen px-8">
         <div className="w-full max-w-md transform transition-all duration-500 ease-out">
+          {/* Barra de progreso */}
+          <ProgressBar />
+
           <h2 className="text-2xl font-medium text-gray-800 mb-4 transform transition-all duration-300 ease-out">
             {stepContent.number}- {stepContent.question}*
           </h2>
@@ -414,17 +435,20 @@ function Register() {
                 ))}
               </select>
             ) : (
-              <input
-                type={stepContent.type}
-                value={formData[stepContent.field as keyof typeof formData]}
-                onChange={(e) =>
-                  handleInputChange(stepContent.field, e.target.value)
-                }
-                onKeyPress={handleKeyPress}
-                placeholder={stepContent.placeholder}
-                className="w-full bg-transparent border-none border-b-2 border-gray-800 pb-2 text-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:border-teal-600 transition-colors duration-300"
-                autoFocus
-              />
+              <>
+                <input
+                  type={stepContent.type}
+                  value={formData[stepContent.field as keyof typeof formData]}
+                  onChange={(e) =>
+                    handleInputChange(stepContent.field, e.target.value)
+                  }
+                  onKeyPress={handleKeyPress}
+                  placeholder={stepContent.placeholder}
+                  className="w-full bg-transparent border-none border-b-2 border-gray-800 pb-2 text-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:border-teal-600 transition-colors duration-300"
+                  autoFocus
+                />
+                <div className="w-full h-0.5 bg-black mt-[-2px]" />
+              </>
             )}
           </div>
 

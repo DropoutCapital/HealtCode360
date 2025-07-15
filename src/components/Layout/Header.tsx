@@ -10,7 +10,7 @@ const Header = () => {
     <header className="w-full px-6 py-4 z-50 relative">
       <div className="flex items-center justify-between">
         <div className="text-4xl font-bold text-slate-800 flex items-center space-x-1 z-50">
-          <span>healthcode</span>
+          <span>HealthCode</span>
           <span className="text-teal-600 flex items-center space-x-0.5 font-bold">
             <span>36</span>
             <RotateCcw className="w-7 h-9 rotate-180" strokeWidth={3} />
