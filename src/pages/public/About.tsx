@@ -2,14 +2,12 @@ import Sidebar from "../../components/Layout/Sidebar";
 
 const About = () => {
   return (
-    <div id="about" className="min-h-screen bg-white flex px-8 py-20">
+    <div id="about" className="min-h-screen mb-6 mt-6 bg-white flex px-8 py-20">
       <div className="w-48 mt-56 ml-16">
         <Sidebar />
       </div>
 
-      {/* Contenido principal */}
       <main className="flex-1 flex flex-col items-start pl-12">
-        {/* Mission Statement */}
         <div className="mb-20">
           <h1 className="text-6xl font-bold text-black leading-tight">
             Our mission:
@@ -19,13 +17,14 @@ const About = () => {
           </h2>
         </div>
 
-        {/* Our Bio Section */}
         <section className="max-w-3xl">
           <div className="mb-6">
-            <h3 className="text-xl text-gray-700 font-semibold mb-2">
-              Our Bio
-            </h3>
-            <div className="w-full h-px bg-gray-300" />
+            <div className="flex items-center space-x-4 mb-6">
+              <h3 className="text-xl text-gray-700 font-semibold whitespace-nowrap">
+                Our Bio
+              </h3>
+              <div className="flex-1 h-px bg-gray-300" />
+            </div>
           </div>
           <p className="text-gray-700 text-base leading-relaxed">
             We founded HealthCode360 out of a shared frustration with a reactive

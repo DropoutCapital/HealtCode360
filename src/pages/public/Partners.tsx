@@ -5,7 +5,7 @@ const Partners = () => {
   return (
     <div
       id="partners"
-      className="min-h-screen mx-[20px] flex bg-black/10 backdrop-blur-md rounded-4xl"
+      className="min-h-screen mb-6 mx-[20px] flex bg-black/10 backdrop-blur-md rounded-4xl"
     >
       <div className="w-48 mt-56 ml-16">
         <Sidebar />

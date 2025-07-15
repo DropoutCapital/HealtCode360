@@ -5,7 +5,7 @@ const ContactUs = () => {
   return (
     <div
       id="contact"
-      className="min-h-screen mx-[20px] flex bg-black/10 backdrop-blur-md rounded-4xl"
+      className="min-h-screen mx-[20px] mb-6 mt-6 flex bg-black/10 backdrop-blur-md rounded-4xl"
     >
       <div className="w-48 mt-56 ml-16">
         <Sidebar />

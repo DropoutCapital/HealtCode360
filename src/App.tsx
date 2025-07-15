@@ -8,19 +8,22 @@ import Footer from "./components/Layout/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-[url('../public/background.webp')] bg-cover bg-center bg-no-repeat">
-      <section className="h-screen bg-black/10 backdrop-blur-md rounded-lg mx-[20px] overflow-hidden shadow-md flex flex-col px-6 py-6">
-        <Header />
-        <Hero />
-      </section>
+    <div className="relative min-h-screen">
+      <div className="fixed inset-0 w-screen h-screen bg-[url('../public/background.webp')] bg-cover bg-center bg-no-repeat z-0" />
 
-      {/* About y demás secciones ocupan todo el ancho */}
-      <About />
-      <Partners />
-      <Services />
-      <ContactUs />
+      <div className="relative z-10">
+        <section className="h-screen bg-black/10 backdrop-blur-md rounded-lg mt-[20px] mx-[20px] overflow-hidden shadow-md flex flex-col px-6 py-6">
+          <Header />
+          <Hero />
+        </section>
 
-      <Footer />
+        <About />
+        <Partners />
+        <Services />
+        <ContactUs />
+
+        <Footer />
+      </div>
     </div>
   );
 }
