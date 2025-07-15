@@ -417,23 +417,26 @@ function Register() {
 
           <div className="mb-8 transform transition-all duration-300 delay-200 ease-out">
             {stepContent.type === "select" ? (
-              <select
-                value={formData[stepContent.field as keyof typeof formData]}
-                onChange={(e) =>
-                  handleInputChange(stepContent.field, e.target.value)
-                }
-                className="w-full bg-transparent border-none border-b-2 border-gray-800 pb-2 text-lg text-gray-800 focus:outline-none focus:border-teal-600 transition-colors duration-300"
-                autoFocus
-              >
-                <option value="" className="text-gray-500">
-                  {stepContent.placeholder}
-                </option>
-                {US_STATES.map((state) => (
-                  <option key={state} value={state} className="text-gray-800">
-                    {state}
+              <>
+                <select
+                  value={formData[stepContent.field as keyof typeof formData]}
+                  onChange={(e) =>
+                    handleInputChange(stepContent.field, e.target.value)
+                  }
+                  className="w-full bg-transparent border-none border-b-2 border-gray-800 pb-2 text-lg text-gray-800 focus:outline-none focus:border-teal-600 transition-colors duration-300"
+                  autoFocus
+                >
+                  <option value="" className="text-gray-500">
+                    {stepContent.placeholder}
                   </option>
-                ))}
-              </select>
+                  {US_STATES.map((state) => (
+                    <option key={state} value={state} className="text-gray-800">
+                      {state}
+                    </option>
+                  ))}
+                </select>
+                <div className="w-full h-0.5 bg-black mt-[-2px]" />
+              </>
             ) : (
               <>
                 <input
