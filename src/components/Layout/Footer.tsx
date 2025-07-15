@@ -10,7 +10,10 @@ const Footer = () => {
           <h1 className="text-12xl md:text-7xl lg:text-8xl font-bold text-slate-700 leading-none flex items-center gap-0">
             healthcode36
             <span className="text-slate-700">
-              <RotateCcw className="w-[60px] h-[60px] rotate-180 font-bold" />
+              <RotateCcw
+                className="w-[30px] h-[60px] lg:w-[90px] lg:h-[80px] rotate-180 font-bold"
+                strokeWidth={3}
+              />
             </span>
           </h1>
         </div>
