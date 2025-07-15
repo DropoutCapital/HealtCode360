@@ -3,13 +3,16 @@ import { ArrowUpRight } from "lucide-react";
 
 const Services = () => {
   return (
-    <div id="services" className="min-h-screen bg-gray-50 flex">
-      <div className="w-48 mt-56 ml-16">
+    <div
+      id="services"
+      className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-12"
+    >
+      <div className="flex items-center justify-center w-48 mx-auto">
         <Sidebar />
       </div>
 
       <div className="flex-1 p-8">
-        <div className="flex justify-between items-start mb-16 m-18">
+        <div className="flex justify-between items-start mb-1 m-18">
           <h1 className="text-6xl font-bold text-black">Services</h1>
           <button className="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-sm flex items-center gap-2">
             Start with my Insurance
@@ -30,7 +33,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl">
           {/* Service 01 */}
-          <div>
+          <div className="border-1 border-gray-50 p-6 rounded-lg shadow-sm">
             <div className="text-5xl font-bold text-slate-700 mb-6">01</div>
             <h3 className="text-xl font-bold text-black mb-4">
               134 Biomarkers
@@ -42,7 +45,7 @@ const Services = () => {
           </div>
 
           {/* Service 02 */}
-          <div>
+          <div className="border-1 border-gray-50 p-6 rounded-lg shadow-sm">
             <div className="text-5xl font-bold text-slate-700 mb-6">02</div>
             <h3 className="text-xl font-bold text-black mb-4">
               Home Extraction
@@ -54,7 +57,7 @@ const Services = () => {
           </div>
 
           {/* Service 03 */}
-          <div>
+          <div className="border-1 border-gray-50 p-6 rounded-lg shadow-sm">
             <div className="text-5xl font-bold text-slate-700 mb-6">03</div>
             <h3 className="text-xl font-bold text-black mb-4">
               Telehealth Unlimited

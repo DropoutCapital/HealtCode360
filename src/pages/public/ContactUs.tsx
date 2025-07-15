@@ -7,18 +7,18 @@ const ContactUs = () => {
       id="contact"
       className="min-h-screen mx-[20px] mb-6 mt-6 flex bg-black/10 backdrop-blur-md rounded-4xl"
     >
-      <div className="w-48 mt-56 ml-16">
+      <div className="flex items-center justify-center w-48 mx-auto">
         <Sidebar />
       </div>
 
       <div className="flex-1 p-8 flex flex-col justify-center">
         <div className="max-w-4xl">
           <h1 className="text-6xl md:text-7xl font-bold text-black mb-16 leading-tight">
-            We are here to
+            Join the
             <br />
-            answer your
+            Prevention
             <br />
-            questions
+            Revolution
           </h1>
 
           <div className="flex items-center gap-8">

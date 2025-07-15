@@ -8,7 +8,7 @@ import Footer from "./components/Layout/Footer";
 
 function App() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-x-hidden">
       <div className="fixed inset-0 w-screen h-screen bg-[url('../public/background.webp')] bg-cover bg-center bg-no-repeat z-0" />
 
       <div className="relative z-10">

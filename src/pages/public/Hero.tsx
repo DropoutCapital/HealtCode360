@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowRight, Users, House, Microscope } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -7,26 +7,43 @@ const Hero = () => {
       className="flex flex-col items-center justify-center text-center px-8 py-16 flex-grow"
     >
       <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-7xl font-extrabold leading-tight tracking-tight text-center text-slate-900 mb-6">
-        Precision Medicine,
+        One Test. Zero Guesswork.
         <br />
-        <span className="text-[#354555]">Paid by Your Insurance.</span>
+        <span className="text-[#354555]">$1 a Day.</span>
       </h1>
 
-      <p className="text-lg md:text-xl text-slate-700 mb-16 max-w-3xl mx-auto leading-relaxed">
-        Stop guessing and take control of your health, now covered by your
-        insurance.
-      </p>
+      <div className="flex flex-wrap justify-center gap-12 py-8">
+        {/* Item 1 */}
+        <div className="flex items-center space-x-2 text-slate-800">
+          <Microscope className="w-6 h-6" />
+          <span className="text-lg font-medium">134 Biomarkers</span>
+        </div>
+
+        {/* Item 2 */}
+        <div className="flex items-center space-x-2 text-slate-800">
+          <Users className="w-6 h-6" />
+          <span className="text-lg font-medium">Personal Health Team</span>
+        </div>
+
+        {/* Item 3 */}
+        <div className="flex items-center space-x-2 text-slate-800">
+          <House className="w-6 h-6" />
+          <span className="text-lg font-medium">Home Analysis</span>
+        </div>
+      </div>
 
       <div className="flex justify-center">
         <button
-          className="w-20 h-20 rounded-full border-2 border-teal-600 flex items-center justify-center transition-all duration-300 group"
+          className="w-15 h-10 rounded-full bg-teal-700 flex items-center justify-start px-1 transition-all duration-300"
           onClick={() => {
             document
               .querySelector("#about")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
         >
-          <ArrowDown className="w-6 h-6 text-teal-600 hover:text-white group-hover:translate-y-1 transition-transform duration-200" />
+          <div className="bg-white rounded-full p-1 flex items-center justify-center ml-auto">
+            <ArrowRight className="w-5 h-5 text-teal-700" />
+          </div>
         </button>
       </div>
     </section>

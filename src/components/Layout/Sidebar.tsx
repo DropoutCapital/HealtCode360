@@ -26,8 +26,8 @@ const Sidebar = () => {
 
   const navItems = [
     { id: "intro", label: "Intro" },
-    { id: "about", label: "About us" },
-    { id: "partners", label: "Partners" },
+    { id: "about", label: "Reason for being" },
+    { id: "partners", label: "How it works" },
     { id: "services", label: "Services" },
     { id: "contact", label: "Contact Us" },
   ];

@@ -2,18 +2,21 @@ import Sidebar from "../../components/Layout/Sidebar";
 
 const About = () => {
   return (
-    <div id="about" className="min-h-screen mb-6 mt-6 bg-white flex px-8 py-20">
-      <div className="w-48 mt-56 ml-16">
+    <div
+      id="about"
+      className="min-h-screen mb-6 mt-6 bg-white flex items-center justify-center px-8 py-20"
+    >
+      <div className="flex items-center justify-center w-48 mx-auto">
         <Sidebar />
       </div>
 
       <main className="flex-1 flex flex-col items-start pl-12">
         <div className="mb-20">
           <h1 className="text-6xl font-bold text-black leading-tight">
-            Our mission:
+            Our reason for being:
           </h1>
           <h2 className="text-6xl font-bold text-black leading-tight">
-            to democratize health
+            Prevention Can't Wait
           </h2>
         </div>
 
@@ -21,19 +24,18 @@ const About = () => {
           <div className="mb-6">
             <div className="flex items-center space-x-4 mb-6">
               <h3 className="text-xl text-gray-700 font-semibold whitespace-nowrap">
-                Our Bio
+                Our reason
               </h3>
               <div className="flex-1 h-px bg-gray-300" />
             </div>
           </div>
           <p className="text-gray-700 text-base leading-relaxed">
-            We founded HealthCode360 out of a shared frustration with a reactive
-            healthcare system that reserves its best tools for an elite few.
-            That's why we pioneered a new model that connects the world's most
-            advanced diagnostics with your insurance coverage. Our team of
-            clinicians, technologists, and wellness specialists is committed to
-            giving you the clarity and tools to take control of your health like
-            never before.
+            Ninety percent of the $4.5 trillion in annual U.S. healthcare
+            spending goes to treating chronic diseases, rather than preventing
+            them. Six out of ten adults are already living with at least one
+            chronic disease. That's not a health care system, that's bankruptcy
+            through a thousand avoidable co-pays.{" "}
+            <span className="font-bold"> We are changing it. </span>
           </p>
         </section>
       </main>
