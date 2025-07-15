@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ArrowRight, RotateCcw } from "lucide-react";
 
 const Header = () => {
@@ -43,19 +44,23 @@ const Header = () => {
           </a>
         </nav>
         {/* Call to Action */}
-        <button className="hidden cursor-pointer md:flex items-center justify-between border border-teal-700 rounded-full px-6 py-2 text-teal-900 font-bold hover:bg-teal-50 transition-all group">
-          Join us today
-          <div className="ml-4 w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center group-hover:bg-teal-800 transition-colors">
-            <ArrowRight className="w-4 h-4 text-white" />
-          </div>
-        </button>
+        <Link to="/register">
+          <button className="hidden cursor-pointer md:flex items-center justify-between border border-teal-700 rounded-full px-6 py-2 text-teal-900 font-bold hover:bg-teal-50 transition-all group">
+            Join us today
+            <div className="ml-4 w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center group-hover:bg-teal-800 transition-colors">
+              <ArrowRight className="w-4 h-4 text-white" />
+            </div>
+          </button>
+        </Link>
         {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-slate-800 z-50 cursor-pointer"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <Link to="/register">
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-slate-800 z-50 cursor-pointer"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </Link>
       </div>
 
       {/* Fullscreen Mobile Menu */}

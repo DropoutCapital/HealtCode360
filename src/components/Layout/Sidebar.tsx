@@ -34,7 +34,7 @@ const Sidebar = () => {
 
   return (
     <aside className="relative w-40 pl-4">
-      <div className="absolute left-1 h-[180px] w-1 bg-gray-300 rounded-full top-1" />
+      <div className="absolute left-1 h-[190px] w-1 bg-gray-300 rounded-full top-1" />
 
       <nav className="flex flex-col space-y-6 mt-2 relative z-10 text-sm">
         {navItems.map((item) => (
