@@ -11,16 +11,14 @@ const Footer = () => {
             healthcode36
             <span className="text-slate-700">
               <RotateCcw
-                className="w-[30px] h-[60px] lg:w-[90px] lg:h-[80px] rotate-180 font-bold"
+                className="w-[40px] h-[20px] lg:w-[90px] lg:h-[80px] rotate-180 font-bold"
                 strokeWidth={3}
               />
             </span>
           </h1>
         </div>
 
-        {/* Footer Content Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
-          {/* Website Navigation */}
           <div>
             <h3 className="text-xl font-semibold text-black mb-8">
               Website navigation
@@ -64,7 +62,6 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Social Networking */}
           <div>
             <h3 className="text-xl font-semibold text-black mb-8">
               Social Networking
@@ -93,7 +90,6 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Legals */}
           <div>
             <h3 className="text-xl font-semibold text-black mb-8">Legals</h3>
             <nav className="space-y-4">
@@ -122,7 +118,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center pt-8 border-t border-gray-200">
           <div className="text-gray-700 mb-4 md:mb-0">
             <p className="font-medium"> &copy; {currentYear} HEALTCODE360°</p>

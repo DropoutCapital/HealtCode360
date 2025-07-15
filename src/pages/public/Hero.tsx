@@ -6,7 +6,7 @@ const Hero = () => {
       id="intro"
       className="flex flex-col items-center justify-center text-center px-8 py-16 flex-grow"
     >
-      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl 2xl:text-[10rem] font-extrabold leading-[1.1] tracking-tight text-center text-slate-900 mb-6">
+      <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-8xl 2xl:text-[10rem] font-extrabold leading-[1.1] tracking-tight text-center text-slate-900 mb-6">
         One Test. Zero Guesswork.
         <br />
         <span className="text-[#354555]">$1 a Day.</span>

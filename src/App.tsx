@@ -14,7 +14,7 @@ function HomePage() {
     <div className="relative min-h-screen overflow-x-hidden">
       <div className="fixed inset-0 w-screen h-screen bg-[url('../public/background.webp')] bg-cover bg-center bg-no-repeat z-0" />
       <div className="relative z-10">
-        <section className="h-screen bg-black/10 backdrop-blur-md rounded-lg mt-[20px] mx-[20px] overflow-hidden shadow-md flex flex-col px-6 py-6">
+        <section className="h-screen bg-white/10 backdrop-blur-md rounded-lg mt-[20px] mx-[20px] overflow-hidden shadow-md flex flex-col px-6 py-6">
           <Header />
           <Hero />
         </section>
@@ -32,7 +32,7 @@ function RegisterPage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <div className="fixed inset-0 w-screen h-screen bg-[url('../public/background.webp')] bg-cover bg-center bg-no-repeat z-0" />
-      <section className="h-screen bg-black/10 backdrop-blur-md rounded-lg mt-[20px] mx-[20px] mb-[20px] overflow-hidden shadow-md flex flex-col px-6 py-6">
+      <section className="h-screen bg-white/10 backdrop-blur-md rounded-lg mt-[20px] mx-[20px] mb-[20px] overflow-hidden shadow-md flex flex-col px-6 py-6">
         <Register />
       </section>
     </div>
