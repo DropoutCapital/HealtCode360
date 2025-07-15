@@ -1,39 +1,12 @@
+import Sidebar from "../../components/Layout/Sidebar";
 import { ArrowUpRight } from "lucide-react";
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div id="services" className="min-h-screen bg-gray-50 flex ">
       {/* Sidebar Navigation */}
-      <div className="w-64 p-8">
-        <nav className="space-y-4">
-          <a
-            href="#intro"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Intro
-          </a>
-          <a
-            href="#about"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            About us
-          </a>
-          <a
-            href="#partners"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Partners
-          </a>
-          <a href="#services" className="block text-teal-600 font-medium">
-            Services
-          </a>
-          <a
-            href="#contact"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Contact Us
-          </a>
-        </nav>
+      <div className="w-48 mt-56 ml-16">
+        <Sidebar />
       </div>
 
       {/* Main Content */}

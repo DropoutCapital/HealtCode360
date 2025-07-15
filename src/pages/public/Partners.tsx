@@ -1,41 +1,15 @@
+import Sidebar from "../../components/Layout/Sidebar";
 import { MapPin, RefreshCw, Shield } from "lucide-react";
 
 const Partners = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      {/* Sidebar Navigation */}
-      <div className="w-64 p-8">
-        <nav className="space-y-4">
-          <a
-            href="#intro"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Intro
-          </a>
-          <a
-            href="#about"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            About us
-          </a>
-          <a href="#partners" className="block text-teal-600 font-medium">
-            Partners
-          </a>
-          <a
-            href="#services"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Services
-          </a>
-          <a
-            href="#contact"
-            className="block text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            Contact Us
-          </a>
-        </nav>
+    <div
+      id="partners"
+      className="min-h-screen mx-[20px] flex bg-black/10 backdrop-blur-md rounded-4xl"
+    >
+      <div className="w-48 mt-56 ml-16">
+        <Sidebar />
       </div>
-
       {/* Main Content */}
       <div className="flex-1 p-8">
         {/* Main Title */}

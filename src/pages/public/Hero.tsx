@@ -3,7 +3,7 @@ import { ArrowDown } from "lucide-react";
 const Hero = () => {
   return (
     <section className="flex flex-col items-center justify-center text-center px-8 py-16 flex-grow">
-      <h1 className="text-4xl sm:text-6xl md:text-5xl lg:text-[6rem] xl:text-[5rem] font-extrabold leading-tight tracking-tight text-center text-slate-900 mb-6">
+      <h1 className="text-4xl sm:text-6xl md:text-5xl lg:text-[6rem] xl:text-[12rem] font-extrabold leading-tight tracking-tight text-center text-slate-900 mb-6">
         Precision Medicine,
         <br />
         <span className="text-[#354555]">Paid by Your Insurance.</span>

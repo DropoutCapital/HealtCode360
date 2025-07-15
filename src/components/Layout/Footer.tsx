@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 px-8 py-16">
+    <footer className="bg-gray-50 px-8 py-16 mt-6">
       <div className="max-w-7xl mx-auto">
         {/* Logo */}
         <div className="mb-16">
