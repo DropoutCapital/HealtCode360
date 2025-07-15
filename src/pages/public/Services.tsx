@@ -14,7 +14,7 @@ const Services = () => {
       <div className="flex-1 p-8">
         <div className="flex justify-between items-start mb-1 m-18">
           <h1 className="text-6xl font-bold text-black">Services</h1>
-          <button className="bg-teal-600 text-white px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-sm flex items-center gap-2">
+          <button className="bg-teal-600 text-white cursor-pointer px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-sm flex items-center gap-2">
             Start with my Insurance
             <div className="bg-white rounded-full p-1">
               <ArrowUpRight className="w-4 h-4 text-teal-600" />

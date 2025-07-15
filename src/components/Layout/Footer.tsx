@@ -129,7 +129,7 @@ const Footer = () => {
             <p>ALL RIGHTS RESERVED</p>
           </div>
 
-          <button className="bg-teal-600 text-white px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium flex items-center gap-2">
+          <button className="bg-teal-600 text-white cursor-pointer px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium flex items-center gap-2">
             Start with my Insurance
             <div className="bg-white rounded-full p-1">
               <ArrowUpRight className="w-5 h-5 text-teal-600" />

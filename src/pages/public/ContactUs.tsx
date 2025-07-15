@@ -22,7 +22,7 @@ const ContactUs = () => {
           </h1>
 
           <div className="flex items-center gap-8">
-            <button className="bg-teal-600 text-white px-8 py-4 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-lg flex items-center gap-3">
+            <button className="bg-teal-600 text-white cursor-pointer px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-lg flex items-center gap-3">
               Contact Us
               <div className="bg-white rounded-full p-1">
                 <ArrowUpRight className="w-5 h-5 text-teal-600" />
