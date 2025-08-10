@@ -1,4 +1,4 @@
-import { ArrowUpRight, RotateCcw } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,13 +8,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <h1 className="text-12xl md:text-7xl lg:text-8xl font-bold text-slate-700 leading-none flex items-center gap-0">
-            healthcode36
-            <span className="text-slate-700">
-              <RotateCcw
-                className="w-[40px] h-[20px] lg:w-[90px] lg:h-[80px] rotate-180 font-bold"
-                strokeWidth={3}
-              />
-            </span>
+            healthcode360
           </h1>
         </div>
 

@@ -73,7 +73,7 @@ const InitialPartnership = () => {
       <div className="app-hero-noise" />
       <div className="screen-frame" />
 
-      <div className="min-h-screen px-4 sm:px-6 md:px-10 py-10">
+      <div id="partners" className="min-h-screen px-4 sm:px-6 md:px-10 py-10">
         <div className="glass-surface min-h-[70vh] w-full mx-auto p-6 sm:p-10 lg:p-12 flex gap-8">
           <div className="hidden lg:flex items-center justify-center w-48">
             <Sidebar />
