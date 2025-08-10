@@ -1,9 +1,52 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 
+const getEffectiveBackgroundColor = (el: Element | null): string => {
+  let node: Element | null = el;
+  while (node) {
+    const style = window.getComputedStyle(node as Element);
+    const bg = style.backgroundColor;
+    if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+      return bg;
+    }
+    node = (node.parentElement as Element) || null;
+  }
+  return "rgb(255, 255, 255)"; // fallback to white
+};
+
+const srgbToLinear = (c: number) => {
+  c /= 255;
+  return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+};
+const relativeLuminance = (r: number, g: number, b: number) => {
+  const R = srgbToLinear(r);
+  const G = srgbToLinear(g);
+  const B = srgbToLinear(b);
+  return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+};
+const contrastRatio = (L1: number, L2: number) => {
+  const light = Math.max(L1, L2);
+  const dark = Math.min(L1, L2);
+  return (light + 0.05) / (dark + 0.05);
+};
+
 const Header = () => {
+  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [showBrand, setShowBrand] = useState(false);
+  const [isDarkBackground, setIsDarkBackground] = useState(true);
+
+  const linkColorClass = isDarkBackground
+    ? "text-white/80 hover:text-white"
+    : "text-black/80 hover:text-black";
+  const activeBrandColor = isDarkBackground ? "text-white" : "text-black";
+  const joinUsColor = isDarkBackground
+    ? "text-teal-400 hover:text-teal-300"
+    : "text-teal-700 hover:text-teal-600";
+  const joinUsBorder = isDarkBackground
+    ? "border-teal-400/60 group-hover:border-teal-300"
+    : "border-teal-700/60 group-hover:border-teal-600";
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -15,6 +58,37 @@ const Header = () => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    const recompute = () => {
+      setShowBrand(window.scrollY > 40);
+      const headerEl = document.querySelector("header");
+      if (headerEl) {
+        const prev = (headerEl as HTMLElement).style.pointerEvents;
+        (headerEl as HTMLElement).style.pointerEvents = "none";
+        const midX = Math.floor(window.innerWidth / 2);
+        const rect = headerEl.getBoundingClientRect();
+        const midY = Math.max(0, Math.floor(rect.top + rect.height / 2));
+        let underEl = document.elementFromPoint(midX, midY);
+        (headerEl as HTMLElement).style.pointerEvents = prev;
+
+        const bgColor = getEffectiveBackgroundColor(underEl || headerEl);
+        const rgb = bgColor.match(/\d+/g)?.map(Number) || [255, 255, 255];
+        const Lbg = relativeLuminance(rgb[0], rgb[1], rgb[2]);
+        const cWhite = contrastRatio(1, Lbg);
+        const cBlack = contrastRatio(Lbg, 0);
+        const WHITE_BIAS = 1.15; // favor white text slightly on medium-dark backgrounds
+        setIsDarkBackground(cWhite * WHITE_BIAS >= cBlack);
+      }
+    };
+    recompute();
+    window.addEventListener("scroll", recompute, { passive: true });
+    window.addEventListener("resize", recompute);
+    return () => {
+      window.removeEventListener("scroll", recompute);
+      window.removeEventListener("resize", recompute);
+    };
+  }, []);
+
   return (
     <header className="w-full px-9 py-8 z-50 relative ">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
@@ -22,39 +96,39 @@ const Header = () => {
         <div className="hidden md:flex items-center justify-between flex-1 mx-6">
           {/* Left group */}
           <nav className="flex items-center space-x-10">
-            <a
-              href="#about"
-              className="text-white/80 hover:text-white font-medium"
-            >
+            <a href="#about" className={`${linkColorClass} font-medium`}>
               Reason for being
             </a>
-            <a
-              href="#partners"
-              className="text-white/80 hover:text-white font-medium"
-            >
+            <a href="#partners" className={`${linkColorClass} font-medium`}>
               How it works
             </a>
-            <a
-              href="#services"
-              className="text-white/80 hover:text-white font-medium"
-            >
+            <a href="#services" className={`${linkColorClass} font-medium`}>
               Services
             </a>
           </nav>
 
+          {/* Brand in center */}
+          <Link
+            to="/"
+            className={`font-extrabold text-6xl tracking-wide ${activeBrandColor}  md:text-xl transition-all duration-300 ease-out select-none ${
+              showBrand
+                ? "opacity-100 scale-100"
+                : "opacity-0 scale-95 pointer-events-none"
+            }`}
+          >
+            healtCode360
+          </Link>
+
           {/* Right group */}
           <div className="flex items-center space-x-10">
-            <a
-              href="#contact"
-              className="text-white/80 hover:text-white font-medium"
-            >
+            <a href="#contact" className={`${linkColorClass} font-medium`}>
               Contact us
             </a>
             <Link
               to="/register"
-              className="group inline-flex items-center font-semibold text-teal-400 hover:text-teal-300"
+              className={`group inline-flex items-center font-semibold ${joinUsColor}`}
             >
-              <span className="mr-2 border-b-2 border-teal-400/60 group-hover:border-teal-300">
+              <span className={`mr-2 border-b-2 ${joinUsBorder}`}>
                 Join us today
               </span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -64,7 +138,9 @@ const Header = () => {
 
         <button
           onClick={toggleMenu}
-          className="md:hidden text-slate-800 z-50 focus:outline-none"
+          className={`md:hidden ${
+            isDarkBackground ? "text-white" : "text-slate-800"
+          } z-50 focus:outline-none`}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
