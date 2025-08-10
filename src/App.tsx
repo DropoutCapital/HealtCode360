@@ -12,7 +12,7 @@ import Register from "./pages/register/register";
 function HomePage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden pt-20 bg-gradient-to-t from-black to-[#003832]">
-      <div className="fixed inset-0 w-screen h-screen bg-[url('/background.webp')] bg-cover bg-center bg-no-repeat z-0" />
+      <div className="fixed inset-0 w-screen h-screen bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat z-0" />
       <div className="fixed inset-0 w-screen h-screen bg-gradient-to-b from-black to-[#003832] opacity-80 z-[1]" />
       <div className="relative z-10">
         <section className="overflow-hidden flex flex-col px-6 py-6">

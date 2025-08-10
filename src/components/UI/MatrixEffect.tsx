@@ -1,4 +1,4 @@
-const Matrix = ({ animate = true }) => {
+const MatrixEffect = ({ animate = true }) => {
   return (
     <svg
       className={animate ? "matrix-svg animate" : "matrix-svg"}
@@ -1091,4 +1091,4 @@ const Matrix = ({ animate = true }) => {
   );
 };
 
-export default Matrix;
+export default MatrixEffect;
