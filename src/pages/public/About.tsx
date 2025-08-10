@@ -54,7 +54,7 @@ const About = () => {
         </div>
         <div className="absolute inset-x-0 top-0 h-40 sm:h-48 lg:h-56 z-10 pointer-events-none bg-gradient-to-b from-white via-white/80 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-2  z-10 pointer-events-none bg-gradient-to-t from-white via-white to-transparent" />
-        <div className="relative z-20 max-w-6xl mx-auto mb-36">
+        <div className="relative z-20 max-w-6xl mx-auto mb-64">
           <div className="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
             {/* Sidebar a la izquierda, solo en desktop */}
             <aside className="hidden lg:block sticky top-32 self-start">
@@ -78,7 +78,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden w-full -mt-60">
+      <section className="relative overflow-hidden w-full -mt-72">
         <MatrixEffect />
       </section>
     </main>
