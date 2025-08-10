@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ArrowRight, RotateCcw } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,51 +16,51 @@ const Header = () => {
   }, [isOpen]);
 
   return (
-    <header className="w-full px-6 py-4 z-50 relative ">
+    <header className="w-full px-9 py-8 z-50 relative ">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="text-3xl sm:text-4xl font-bold text-slate-800 flex items-center z-50">
-          <span>HealthCode</span>
-          <span className="text-teal-600 flex items-center ml-1 font-bold">
-            <span>36</span>
-            <RotateCcw className="w-6 h-8 rotate-180" strokeWidth={3} />
-          </span>
+        {/* Desktop navbar splitted left / right */}
+        <div className="hidden md:flex items-center justify-between flex-1 mx-6">
+          {/* Left group */}
+          <nav className="flex items-center space-x-10">
+            <a
+              href="#about"
+              className="text-white/80 hover:text-white font-medium"
+            >
+              Reason for being
+            </a>
+            <a
+              href="#partners"
+              className="text-white/80 hover:text-white font-medium"
+            >
+              How it works
+            </a>
+            <a
+              href="#services"
+              className="text-white/80 hover:text-white font-medium"
+            >
+              Services
+            </a>
+          </nav>
+
+          {/* Right group */}
+          <div className="flex items-center space-x-10">
+            <a
+              href="#contact"
+              className="text-white/80 hover:text-white font-medium"
+            >
+              Contact us
+            </a>
+            <Link
+              to="/register"
+              className="group inline-flex items-center font-semibold text-teal-400 hover:text-teal-300"
+            >
+              <span className="mr-2 border-b-2 border-teal-400/60 group-hover:border-teal-300">
+                Join us today
+              </span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
-
-        <nav className="hidden md:flex items-center space-x-8">
-          <a
-            href="#intro"
-            className="text-slate-700 hover:text-teal-600 font-medium"
-          >
-            Intro
-          </a>
-          <a
-            href="#about"
-            className="text-slate-700 hover:text-teal-600 font-medium"
-          >
-            Reason for being
-          </a>
-          <a
-            href="#partners"
-            className="text-slate-700 hover:text-teal-600 font-medium"
-          >
-            How it works
-          </a>
-          <a
-            href="#services"
-            className="text-slate-700 hover:text-teal-600 font-medium"
-          >
-            Services
-          </a>
-        </nav>
-
-        <Link to="/register">
-          <button className="hidden md:flex items-center border border-teal-700 rounded-full px-6 py-2 text-teal-900 font-bold hover:bg-teal-50 transition-all group">
-            Join us today
-            <div className="ml-4 w-8 h-8 bg-teal-700 rounded-full flex items-center justify-center group-hover:bg-teal-800 transition-colors">
-              <ArrowRight className="w-4 h-4 text-white" />
-            </div>
-          </button>
-        </Link>
 
         <button
           onClick={toggleMenu}
@@ -102,6 +102,13 @@ const Header = () => {
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
           Services
+        </a>
+        <a
+          href="#contact"
+          onClick={toggleMenu}
+          className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
+        >
+          Contact us
         </a>
         <Link to="/register">
           <button

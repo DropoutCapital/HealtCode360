@@ -2,8 +2,8 @@ import MedicalCrossAnimation from "../../components/UI/MedicalCrossAnimation";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[calc(100vh-120px)] px-8 flex items-center justify-center ">
-      <div className="absolute inset-0 flex items-center justify-center z-0">
+    <div className="relative min-h-screen px-8 flex items-center justify-center ">
+      <div className="absolute inset-0 flex items-center justify-center z-0 -mt-36">
         <MedicalCrossAnimation
           size={460}
           rows={24}
@@ -16,11 +16,9 @@ const Hero = () => {
           duration={4200}
           stagger={22}
         />
-        <div className="pointer-events-none absolute inset-0  opacity-60"></div>
       </div>
 
-      {/* Texto por encima de la cruz */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center -mt-80">
         <h1
           style={{ textShadow: "0px 2px 6px rgba(0,0,0,0.7)" }}
           className="text-white font-bold tracking-tight mb-6 text-6xl md:text-8xl lg:text-[180px]"
