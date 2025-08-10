@@ -5,7 +5,7 @@ const Partners = () => {
   return (
     <div
       id="partners"
-      className="min-h-screen mb-6 mx-4 sm:mx-6 md:mx-10 lg:mx-[20px] flex flex-col lg:flex-row items-center justify-center bg-white/10 backdrop-blur-md rounded-4xl p-6 sm:p-8"
+      className="min-h-screen mb-6 mx-4 sm:mx-6 md:mx-10 lg:mx-[20px] flex flex-col lg:flex-row items-center justify-center bg-white/20 backdrop-blur-md rounded-4xl p-6 sm:p-8"
     >
       <div className="hidden lg:flex items-center justify-center w-48">
         <Sidebar />
