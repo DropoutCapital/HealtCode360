@@ -3,3 +3,44 @@
 :root {
   font-family: "Nunito Sans", sans-serif;
 }
+
+/* Efecto de aparición del SVG completo */
+.matrix-svg {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.matrix-svg.animate {
+  animation: fadeInUp 600ms ease-out forwards;
+}
+
+/* Efecto “draw” para todas las líneas */
+.matrix-svg.animate path {
+  /* Valores grandes para cubrir el largo de los trazos */
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 1600ms ease-out forwards;
+}
+
+/* Pequeño ‘stagger’ para que no empiecen todas a la vez */
+.matrix-svg.animate path:nth-of-type(3n + 1) {
+  animation-delay: 120ms;
+}
+.matrix-svg.animate path:nth-of-type(3n + 2) {
+  animation-delay: 240ms;
+}
+.matrix-svg.animate path:nth-of-type(3n + 3) {
+  animation-delay: 360ms;
+}
+
+/* Keyframes */
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

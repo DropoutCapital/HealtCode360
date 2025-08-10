@@ -1,4 +1,5 @@
 import Sidebar from "../../components/Layout/Sidebar";
+import Matrix from "../../components/UI/Matrix";
 
 const About = () => {
   return (
@@ -41,6 +42,9 @@ const About = () => {
           </section>
         </div>
       </main>
+      {/* <div className="hidden lg:block w-full h-full">
+        <Matrix />
+      </div> */}
     </div>
   );
 };
