@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Layout/Sidebar";
 import { ArrowUpRight } from "lucide-react";
 
 const ContactUs = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       id="contact"
@@ -30,7 +33,10 @@ const ContactUs = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-              <button className="bg-[#0EFFEB] text-black cursor-pointer px-6 py-3 sm:px-8 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-lg flex items-center gap-3">
+              <button
+                onClick={() => navigate("/register")}
+                className="bg-[#0EFFEB] text-black cursor-pointer px-6 py-3 sm:px-8 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-lg flex items-center gap-3"
+              >
                 Join our waiting list
                 <div className="bg-white rounded-full p-1">
                   <ArrowUpRight className="w-5 h-5 text-teal-600" />

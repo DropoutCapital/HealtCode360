@@ -1,7 +1,30 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  const smoothScrollToSelector = (selector: string) => {
+    const target = document.querySelector(selector) as HTMLElement | null;
+    if (!target) return;
+    const header = document.querySelector("header") as HTMLElement | null;
+    const headerH = header ? header.offsetHeight : 0;
+    const y =
+      target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  const onNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute("href") || "";
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      setIsOpen(false);
+      smoothScrollToSelector(href);
+    }
+  };
 
   return (
     <footer className="bg-gray-50 px-8 py-16 mt-0">
@@ -20,6 +43,7 @@ const Footer = () => {
             <nav className="space-y-4">
               <a
                 href="#intro"
+                onClick={onNavLinkClick}
                 className="flex items-center text-gray-700 hover:text-teal-600 transition-colors"
               >
                 <span className="w-8 h-px bg-teal-400 mr-3"></span>
@@ -27,6 +51,7 @@ const Footer = () => {
               </a>
               <a
                 href="#about"
+                onClick={onNavLinkClick}
                 className="flex items-center text-gray-700 hover:text-teal-600 transition-colors"
               >
                 <span className="w-8 h-px bg-teal-400 mr-3"></span>
@@ -34,6 +59,7 @@ const Footer = () => {
               </a>
               <a
                 href="#partners"
+                onClick={onNavLinkClick}
                 className="flex items-center text-gray-700 hover:text-teal-600 transition-colors"
               >
                 <span className="w-8 h-px bg-teal-400 mr-3"></span>
@@ -41,6 +67,7 @@ const Footer = () => {
               </a>
               <a
                 href="#services"
+                onClick={onNavLinkClick}
                 className="flex items-center text-gray-700 hover:text-teal-600 transition-colors"
               >
                 <span className="w-8 h-px bg-teal-400 mr-3"></span>
@@ -48,6 +75,7 @@ const Footer = () => {
               </a>
               <a
                 href="#contact"
+                onClick={onNavLinkClick}
                 className="flex items-center text-gray-700 hover:text-teal-600 transition-colors"
               >
                 <span className="w-8 h-px bg-teal-400 mr-3"></span>
@@ -118,7 +146,10 @@ const Footer = () => {
             <p>ALL RIGHTS RESERVED</p>
           </div>
 
-          <button className="bg-teal-600 text-white cursor-pointer px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium flex items-center gap-2">
+          <button
+            onClick={() => navigate("/register")}
+            className="bg-teal-600 text-white cursor-pointer px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium flex items-center gap-2"
+          >
             Start with my Insurance
             <div className="bg-white rounded-full p-1">
               <ArrowUpRight className="w-5 h-5 text-teal-600" />

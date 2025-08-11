@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Sidebar from "../../components/Layout/Sidebar";
 import MatrixEffect from "../../components/UI/MatrixEffect";
 import MatrixRain from "../../components/UI/MatrixRain";
 
 const About = () => {
+  const navigate = useNavigate();
+
   return (
     <main className="w-full min-h-screen bg-transparent">
       <div
@@ -21,14 +24,17 @@ const About = () => {
               health accesible prevention, covered by insurance.
             </h1>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-center gap-6 mb-20">
-              <button className="bg-[#07C4B4] text-white cursor-pointer px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-sm flex items-center gap-2 mx-auto sm:mx-0">
+              <button
+                onClick={() => navigate("/register")}
+                className="bg-[#07C4B4] text-white cursor-pointer px-6 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-sm flex items-center gap-2 mx-auto sm:mx-0"
+              >
                 Join our waiting list
                 <div className="bg-white rounded-full p-1">
                   <ArrowRight className="w-4 h-4 text-teal-600" />
                 </div>
               </button>
               <a
-                href="#"
+                onClick={() => navigate("/register")}
                 className="text-gray-700 hover:text-teal-600 font-medium underline transition-colors"
               >
                 Join us today

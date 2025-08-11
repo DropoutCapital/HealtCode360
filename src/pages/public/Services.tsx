@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Layout/Sidebar";
 import { ArrowUpRight } from "lucide-react";
 
@@ -137,6 +138,8 @@ const TestimonialCard = ({ quote, name, role, avatar }) => (
 );
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
+
   return (
     <div
       id="services"
@@ -170,6 +173,7 @@ const ServicesSection = () => {
                 transition
                 focus:outline-none focus:ring-2 focus:ring-[#0EFFEB]/50
               "
+              onClick={() => navigate("/register")}
               type="button"
             >
               View my free coverage

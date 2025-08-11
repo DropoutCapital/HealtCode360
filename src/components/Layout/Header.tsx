@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 
 const getEffectiveBackgroundColor = (el: Element | null): string => {
@@ -12,7 +12,7 @@ const getEffectiveBackgroundColor = (el: Element | null): string => {
     }
     node = (node.parentElement as Element) || null;
   }
-  return "rgb(255, 255, 255)"; // fallback to white
+  return "rgb(255, 255, 255)";
 };
 
 const srgbToLinear = (c: number) => {
@@ -31,7 +31,6 @@ const contrastRatio = (L1: number, L2: number) => {
   return (light + 0.05) / (dark + 0.05);
 };
 
-// Find nearest ancestor section id
 const findNearestSectionId = (el: Element | null): string | null => {
   let node: Element | null = el;
   while (node) {
@@ -52,19 +51,17 @@ const WHITE_TEXT_SECTIONS = new Set([
 const BLACK_TEXT_SECTIONS = new Set(["preabout", "about", "footer"]);
 
 const Header = () => {
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [showBrand, setShowBrand] = useState(false);
   const [isDarkBackground, setIsDarkBackground] = useState(true);
 
-  // Smooth scroll to an in-page anchor accounting for fixed header height
   const smoothScrollToSelector = (selector: string) => {
     const target = document.querySelector(selector) as HTMLElement | null;
     if (!target) return;
     const header = document.querySelector("header") as HTMLElement | null;
     const headerH = header ? header.offsetHeight : 0;
     const y =
-      target.getBoundingClientRect().top + window.scrollY - headerH - 12; // small extra offset
+      target.getBoundingClientRect().top + window.scrollY - headerH - 12;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
 
@@ -114,8 +111,6 @@ const Header = () => {
         let underEl = document.elementFromPoint(midX, midY);
         (headerEl as HTMLElement).style.pointerEvents = prev;
 
-        // Decide color based on section IDs first (explicit override),
-        // fallback to background luminance when not in a listed section.
         const sectionId = findNearestSectionId(underEl)?.toLowerCase() || null;
         if (sectionId && WHITE_TEXT_SECTIONS.has(sectionId)) {
           setIsDarkBackground(true);
@@ -126,13 +121,12 @@ const Header = () => {
           return;
         }
 
-        // Fallback: compute contrast from effective background
         const bgColor = getEffectiveBackgroundColor(underEl || headerEl);
         const rgb = bgColor.match(/\d+/g)?.map(Number) || [255, 255, 255];
         const Lbg = relativeLuminance(rgb[0], rgb[1], rgb[2]);
         const cWhite = contrastRatio(1, Lbg);
         const cBlack = contrastRatio(Lbg, 0);
-        const WHITE_BIAS = 1.15; // favor white text slightly on medium-dark backgrounds
+        const WHITE_BIAS = 1.15;
         setIsDarkBackground(cWhite * WHITE_BIAS >= cBlack);
       }
     };
@@ -148,9 +142,7 @@ const Header = () => {
   return (
     <header className="w-full px-9 py-8 z-50 relative ">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        {/* Desktop navbar splitted left / right */}
         <div className="hidden md:flex items-center justify-between flex-1 mx-6">
-          {/* Left group */}
           <nav className="flex items-center space-x-10">
             <a
               href="#about"
@@ -175,7 +167,6 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* Brand in center */}
           <Link
             to="/"
             className={`font-extrabold text-6xl tracking-wide ${activeBrandColor}  md:text-xl transition-all duration-300 ease-out select-none ${
@@ -187,7 +178,6 @@ const Header = () => {
             healtCode360
           </Link>
 
-          {/* Right group */}
           <div className="flex items-center space-x-10">
             <a
               href="#contact"
@@ -224,7 +214,7 @@ const Header = () => {
         } flex flex-col items-center justify-center space-y-8 px-8`}
       >
         <a
-          href="#intro"
+          href="#hero"
           onClick={onNavLinkClick}
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
