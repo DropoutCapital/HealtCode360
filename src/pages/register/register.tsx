@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { supabase } from "../../supabase/supabase";
 import { ArrowRight, Clock, CheckCircle, XCircle } from "lucide-react";
 
 const US_STATES = [
@@ -71,25 +72,25 @@ function Register() {
   };
 
   const handleNext = async () => {
-    if (currentStep < 5) {
+    if (currentStep < 3) {
       setCurrentStep(currentStep + 1);
     } else {
-      // Simular envío de datos
       setIsSubmitting(true);
 
       try {
-        // Simular llamada a API
-        await new Promise((resolve) => setTimeout(resolve, 2000));
+        const { error } = await supabase.from("contact").insert([
+          {
+            fullName: formData.fullName,
+            email: formData.email,
+            state: formData.state,
+          },
+        ]);
 
-        // Simular éxito o error aleatoriamente (80% éxito, 20% error)
-        const isSuccess = Math.random() > 0.2;
-
-        if (isSuccess) {
-          setSubmissionStatus("success");
-          console.log("Form submitted successfully:", formData);
-        } else {
-          throw new Error("Submission failed");
+        if (error) {
+          throw error;
         }
+
+        setSubmissionStatus("success");
       } catch (error) {
         setSubmissionStatus("error");
         console.error("Form submission error:", error);
@@ -114,7 +115,7 @@ function Register() {
 
   const handleRetry = () => {
     setSubmissionStatus(null);
-    setCurrentStep(5); // Volver al último paso
+    setCurrentStep(3); // Volver al último paso
   };
 
   const handleStartOver = () => {
@@ -252,9 +253,6 @@ function Register() {
                   <strong>Email:</strong> {formData.email}
                 </p>
                 <p>
-                  <strong>Phone:</strong> {formData.phoneNumber}
-                </p>
-                <p>
                   <strong>State:</strong> {formData.state}
                 </p>
               </div>
@@ -331,7 +329,7 @@ function Register() {
         question: "What is your full name?",
         description: "Please enter your first name",
         placeholder: "Ej. John",
-        field: "firstName",
+        field: "fullName",
         type: "text",
       },
 
