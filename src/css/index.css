@@ -87,3 +87,15 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes slowScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+.animate-slow-scroll {
+  animation: slowScroll 60s linear infinite;
+}

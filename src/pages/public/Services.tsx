@@ -107,12 +107,40 @@ const FeatureCard = ({ icon, title, body }) => (
   </div>
 );
 
+const TestimonialCard = ({ quote, name, role, avatar }) => (
+  <div
+    className="
+      break-inside-avoid
+      rounded-3xl
+      glass-card
+      border border-white/8
+      shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_10px_30px_rgba(0,0,0,0.4)]
+      p-5 sm:p-6 mb-6
+      text-white/90
+      transition-transform duration-200 hover:-translate-y-0.5
+    "
+  >
+    <p className="leading-relaxed text-[15px] sm:text-base">{quote}</p>
+
+    <div className="mt-4 flex items-center gap-3">
+      <img
+        src={avatar}
+        alt={name}
+        className="w-9 h-9 rounded-full object-cover"
+      />
+      <div>
+        <p className="text-[13px] font-semibold text-white">{name}</p>
+        <p className="text-[12px] text-white/60">{role}</p>
+      </div>
+    </div>
+  </div>
+);
+
 const ServicesSection = () => {
   return (
     <div
       id="services"
       className="bg-[#0D0D0D] flex flex-col lg:flex-row items-stretch justify-center px-4 py-8 sm:py-12"
-      // className="min-h-screen bg-[#0D0D0D] flex flex-col lg:flex-row items-stretch justify-center px-4 py-8 sm:py-12"
     >
       <section className="flex w-full max-w-7xl gap-6 bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 sm:p-6">
         <aside className="hidden lg:flex w-48 shrink-0 py-4 justify-center items-center h-full">
@@ -135,6 +163,7 @@ const ServicesSection = () => {
                 px-5 py-3
                 rounded-full
                 font-medium
+                cursor-pointer
                 text-sm
                 inline-flex items-center gap-2
                 hover:opacity-90 active:opacity-80
@@ -170,42 +199,12 @@ const ServicesSection = () => {
   );
 };
 
-const TestimonialCard = ({ quote, name, role, avatar }) => (
-  <div
-    className="
-      break-inside-avoid
-      rounded-3xl
-      glass-card
-      border border-white/8
-      shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_10px_30px_rgba(0,0,0,0.4)]
-      p-5 sm:p-6 mb-6
-      text-white/90
-      transition-transform duration-200 hover:-translate-y-0.5
-    "
-  >
-    <p className="leading-relaxed text-[15px] sm:text-base">{quote}</p>
-
-    <div className="mt-4 flex items-center gap-3">
-      <img
-        src={avatar}
-        alt={name}
-        className="w-9 h-9 rounded-full object-cover"
-      />
-      <div>
-        <p className="text-[13px] font-semibold text-white">{name}</p>
-        <p className="text-[12px] text-white/60">{role}</p>
-      </div>
-    </div>
-  </div>
-);
-
 const Testimonials = () => {
   return (
-    // <section className="relative min-h-screen bg-[#0D0D0D] px-4 py-8 sm:py-12 mt-34 sm:mt-16">
     <section className="relative bg-[#0D0D0D] px-4 py-8 sm:py-12 mt-0">
       <div className="relative  max-w-7xl  bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 ">
         <div className="relative text-center max-w-3xl mx-auto">
-          <p className="text-[#0EFFEB] text-sm mb-2">Social Proof</p>
+          <p className="text-[#0EFFEB] text-sm mb-2 m-12">Social Proof</p>
           <h2 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
             Real results, real impact
           </h2>
@@ -214,25 +213,15 @@ const Testimonials = () => {
           </p>
         </div>
 
-        {/* Masonry (columnas) */}
-        {/* <div className="relative mt-32  ">
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">
-            {testimonials.map((t, i) => (
-              <TestimonialCard key={i} {...t} />
-            ))}
-          </div>
-        </div> */}
-        <div className="relative mt-24">
-          {/* Óvalo superior */}
+        <div className="relative mt-20">
           <div
             className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[88%] h-48 rounded-[999px]
-                  bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0)_0%,rgba(255,255,255,0.2)_35%,transparent_70%)]
+                  bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.1)_35%,transparent_70%)]
                   blur-2xl opacity-70"
           />
 
-          {/* Viñetas laterales para “desvanecer” los bordes del masonry */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#ffff] to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#101010]  to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#101010] to-transparent" />
 
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 relative z-0">
             {testimonials.map((t, i) => (
