@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  ArrowRight,
-  Clock,
-  CheckCircle,
-  XCircle,
-  RotateCcw,
-} from "lucide-react";
+import { ArrowRight, Clock, CheckCircle, XCircle } from "lucide-react";
 
 const US_STATES = [
   "Alabama",
@@ -67,10 +61,8 @@ function Register() {
     "success" | "error" | null
   >(null);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
-    phoneNumber: "",
     state: "",
   });
 
@@ -129,16 +121,14 @@ function Register() {
     setCurrentStep(0);
     setSubmissionStatus(null);
     setFormData({
-      firstName: "",
-      lastName: "",
+      fullName: "",
       email: "",
-      phoneNumber: "",
       state: "",
     });
   };
 
   const ProgressBar = () => {
-    const totalSteps = 5;
+    const totalSteps = 3;
 
     return (
       <div className="flex justify-center gap-2 mb-12 transform transition-all duration-500 ease-out">
@@ -164,7 +154,6 @@ function Register() {
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
-              <RotateCcw className="w-7 h-7 rotate-180" strokeWidth={3} />
             </span>
           </h1>
         </div>
@@ -203,7 +192,6 @@ function Register() {
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
-              <RotateCcw className="w-7 h-7 rotate-180" strokeWidth={3} />
             </span>
           </h1>
         </div>
@@ -230,7 +218,6 @@ function Register() {
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
-              <RotateCcw className="w-7 h-7 rotate-180" strokeWidth={3} />
             </span>
           </h1>
         </div>
@@ -259,8 +246,7 @@ function Register() {
               </h3>
               <div className="text-left space-y-2 text-gray-600">
                 <p>
-                  <strong>Name:</strong> {formData.firstName}{" "}
-                  {formData.lastName}
+                  <strong>Name:</strong> {formData.fullName}
                 </p>
                 <p>
                   <strong>Email:</strong> {formData.email}
@@ -295,7 +281,6 @@ function Register() {
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
-              <RotateCcw className="w-7 h-7 rotate-180" strokeWidth={3} />
             </span>
           </h1>
         </div>
@@ -343,38 +328,24 @@ function Register() {
     const steps = [
       {
         number: 1,
-        question: "What is your first name?",
+        question: "What is your full name?",
         description: "Please enter your first name",
         placeholder: "Ej. John",
         field: "firstName",
         type: "text",
       },
+
       {
         number: 2,
-        question: "What is your last name?",
-        description: "Please enter your last name",
-        placeholder: "Ej. Doe",
-        field: "lastName",
-        type: "text",
-      },
-      {
-        number: 3,
         question: "What is your email address?",
         description: "Please enter your email address",
         placeholder: "Ej. john.doe@email.com",
         field: "email",
         type: "email",
       },
+
       {
-        number: 4,
-        question: "What is your phone number?",
-        description: "Please enter your phone number",
-        placeholder: "Ej. (555) 123-4567",
-        field: "phoneNumber",
-        type: "tel",
-      },
-      {
-        number: 5,
+        number: 3,
         question: "What state are you in?",
         description: "Please select your state",
         placeholder: "Select a state...",
@@ -388,23 +359,19 @@ function Register() {
 
   const stepContent = getStepContent();
 
-  // Pasos del formulario
-
   return (
     <div className="min-h-screen relative overflow-hidden">
       <div className="absolute top-8 left-8 transform transition-all duration-500 ease-out">
         <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
           <span>HealtCode</span>
           <span className="text-teal-600 font-bold flex items-center space-x-0.5">
-            <span>36</span>
-            <RotateCcw className="w-6 h-6 rotate-180" strokeWidth={3} />
+            <span>360</span>
           </span>
         </h1>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen px-8">
         <div className="w-full max-w-md transform transition-all duration-500 ease-out">
-          {/* Barra de progreso */}
           <ProgressBar />
 
           <h2 className="text-2xl font-medium text-gray-800 mb-4 transform transition-all duration-300 ease-out">
@@ -461,7 +428,7 @@ function Register() {
               className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full flex items-center gap-2 transition-all duration-300 ease-out transform hover:scale-105 hover:shadow-lg"
             >
               <span className="font-medium">
-                {currentStep === 5 ? "Complete" : "Next"}
+                {currentStep === 3 ? "Complete" : "Next"}
               </span>
               <div className="bg-white rounded-full p-1">
                 <ArrowRight
