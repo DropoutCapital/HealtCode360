@@ -78,7 +78,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden w-full -mt-72">
+      <section className="relative overflow-hidden w-full -mt-[253px]">
         <MatrixEffect />
       </section>
     </main>
