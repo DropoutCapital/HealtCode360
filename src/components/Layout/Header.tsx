@@ -175,7 +175,7 @@ const Header = () => {
                 : "opacity-0 scale-95 pointer-events-none"
             }`}
           >
-            healtCode360
+            healthcode360
           </Link>
 
           <div className="flex items-center space-x-10">

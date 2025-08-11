@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { supabase } from "../../supabase/supabase";
 import { ArrowRight, Clock, CheckCircle, XCircle } from "lucide-react";
 
@@ -56,6 +57,7 @@ const US_STATES = [
 ];
 
 function Register() {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -127,6 +129,11 @@ function Register() {
       state: "",
     });
   };
+
+  React.useEffect(() => {
+    // If user arrives here via navigation, ensure we start at top
+    window.scrollTo({ top: 0 });
+  }, []);
 
   const ProgressBar = () => {
     const totalSteps = 3;
@@ -258,12 +265,13 @@ function Register() {
               </div>
             </div>
 
-            <button
-              onClick={handleStartOver}
-              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full transition-all duration-300 ease-out transform hover:scale-105"
+            <Link
+              to="/"
+              replace
+              className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-full transition-all duration-300 ease-out transform hover:scale-105 inline-block text-center"
             >
-              Start New Registration
-            </button>
+              Return to home
+            </Link>
           </div>
         </div>
       </div>
