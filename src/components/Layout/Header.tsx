@@ -57,6 +57,26 @@ const Header = () => {
   const [showBrand, setShowBrand] = useState(false);
   const [isDarkBackground, setIsDarkBackground] = useState(true);
 
+  // Smooth scroll to an in-page anchor accounting for fixed header height
+  const smoothScrollToSelector = (selector: string) => {
+    const target = document.querySelector(selector) as HTMLElement | null;
+    if (!target) return;
+    const header = document.querySelector("header") as HTMLElement | null;
+    const headerH = header ? header.offsetHeight : 0;
+    const y =
+      target.getBoundingClientRect().top + window.scrollY - headerH - 12; // small extra offset
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
+  const onNavLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute("href") || "";
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      setIsOpen(false);
+      smoothScrollToSelector(href);
+    }
+  };
+
   const linkColorClass = isDarkBackground
     ? "text-white/80 hover:text-white"
     : "text-black/80 hover:text-black";
@@ -132,13 +152,25 @@ const Header = () => {
         <div className="hidden md:flex items-center justify-between flex-1 mx-6">
           {/* Left group */}
           <nav className="flex items-center space-x-10">
-            <a href="#about" className={`${linkColorClass} font-medium`}>
+            <a
+              href="#about"
+              onClick={onNavLinkClick}
+              className={`${linkColorClass} font-medium`}
+            >
               Reason for being
             </a>
-            <a href="#partners" className={`${linkColorClass} font-medium`}>
+            <a
+              href="#partners"
+              onClick={onNavLinkClick}
+              className={`${linkColorClass} font-medium`}
+            >
               How it works
             </a>
-            <a href="#services" className={`${linkColorClass} font-medium`}>
+            <a
+              href="#services"
+              onClick={onNavLinkClick}
+              className={`${linkColorClass} font-medium`}
+            >
               Services
             </a>
           </nav>
@@ -157,7 +189,11 @@ const Header = () => {
 
           {/* Right group */}
           <div className="flex items-center space-x-10">
-            <a href="#contact" className={`${linkColorClass} font-medium`}>
+            <a
+              href="#contact"
+              onClick={onNavLinkClick}
+              className={`${linkColorClass} font-medium`}
+            >
               Contact us
             </a>
             <Link
@@ -189,35 +225,35 @@ const Header = () => {
       >
         <a
           href="#intro"
-          onClick={toggleMenu}
+          onClick={onNavLinkClick}
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
           Intro
         </a>
         <a
           href="#about"
-          onClick={toggleMenu}
+          onClick={onNavLinkClick}
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
           Reason for being
         </a>
         <a
           href="#partners"
-          onClick={toggleMenu}
+          onClick={onNavLinkClick}
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
           How it works
         </a>
         <a
           href="#services"
-          onClick={toggleMenu}
+          onClick={onNavLinkClick}
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
           Services
         </a>
         <a
           href="#contact"
-          onClick={toggleMenu}
+          onClick={onNavLinkClick}
           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
         >
           Contact us

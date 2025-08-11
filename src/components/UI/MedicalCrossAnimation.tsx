@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 
 export default function MedicalCrossAnimation({
-  size = 420,
+  size = 520,
   rows = 22,
   cols = 56, // ahora 9 columnas totales
   barThickness = 6,

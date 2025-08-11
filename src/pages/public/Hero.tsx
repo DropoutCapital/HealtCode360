@@ -8,10 +8,10 @@ const Hero = () => {
     >
       <div className="absolute inset-0 flex items-center justify-center z-0 -mt-36">
         <MedicalCrossAnimation
-          size={460}
+          size={660}
           rows={24}
           cols={24}
-          barThickness={7}
+          barThickness={9}
           cell={6}
           gap={5}
           baseColor="#93fbfb"
