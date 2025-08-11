@@ -50,8 +50,8 @@ const About = () => {
             backgroundFade="rgba(255,255,255,0.15)"
             fontSize={16}
             density={1}
-            minSpeed={0.1}
-            maxSpeed={0.1}
+            minSpeed={0.05}
+            maxSpeed={0.05}
             showEdgeFades={false}
           />
         </div>

@@ -293,8 +293,8 @@ export default function MatrixRain({
   backgroundFade = "rgba(255,255,255,0.05)", // si el fondo no es blanco, ajusta
   fontSize = 16,
   density = 1,
-  minSpeed = 0.75,
-  maxSpeed = 1.75,
+  minSpeed = 0.02,
+  maxSpeed = 0.05,
   useContainerWidth = false,
   showEdgeFades = true,
 }: MatrixRainProps) {
@@ -312,7 +312,7 @@ export default function MatrixRain({
   const dprRef = useRef<number>(1);
   const runningRef = useRef<boolean>(true);
 
-  const letters = useRef<string[]>("f r d e g i 1 2 3 4 5".split(" "));
+  const letters = useRef<string[]>("F R D E G I 1 2 3 4 5".split(" "));
 
   // Actualiza refs sin romper el loop
   useEffect(() => {

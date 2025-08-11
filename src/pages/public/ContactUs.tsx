@@ -24,8 +24,9 @@ const ContactUs = () => {
 
             <p className="text-white/90 text-lg mb-8">
               Thousands have already unlocked the code. Health no longer has to
-              be expensive, confusing or reactive. Now it’s simple. Covered.
-              Yours.
+              be
+              <br /> expensive, confusing or reactive. <br /> Now it’s simple.
+              Covered. Yours.
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
