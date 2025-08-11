@@ -1,7 +1,23 @@
 import Sidebar from "../../components/Layout/Sidebar";
 import { Video, ShieldPlus, Microscope, Heart } from "lucide-react";
 
-const FeatureCard = ({ icon: Icon, title, subtitle, body }) => (
+type FeatureCardProps = {
+  icon: React.ElementType;
+  title: string;
+  subtitle?: string;
+  body: string;
+};
+
+type BulletProps = {
+  children: React.ReactNode;
+};
+
+const FeatureCard = ({
+  icon: Icon,
+  title,
+  subtitle,
+  body,
+}: FeatureCardProps) => (
   <div className="glass-card p-6 sm:p-7 w-full">
     <div className="mb-4">
       <Icon className="w-8 h-8 opacity-90 text-white" />
@@ -14,7 +30,7 @@ const FeatureCard = ({ icon: Icon, title, subtitle, body }) => (
   </div>
 );
 
-const Bullet = ({ children }) => (
+const Bullet = ({ children }: BulletProps) => (
   <div className="glass-pill px-5 sm:px-7 py-4 sm:py-5 text-slate-100/95">
     <div className="flex items-center gap-3">
       <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400/15 ring-1 ring-emerald-300/30">
@@ -79,7 +95,7 @@ const PreventionSection = () => {
   return (
     <section
       id="prevention"
-      className="px-4 sm:px-6 md:px-10 py-14 sm:py-16 lg:py-20 bg-gradient-to-b from-transparent to-[#0D0D0D]"
+      className="px-4 sm:px-6 md:px-10 py-14 sm:py-16 lg:py-20 "
     >
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-white font-bold tracking-[-0.02em] leading-tight text-4xl sm:text-5xl lg:text-6xl">

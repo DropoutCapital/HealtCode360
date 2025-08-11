@@ -1,34 +1,24 @@
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Layout/Sidebar";
 import { ArrowUpRight } from "lucide-react";
-
 import Card1 from "../../images/cards/card1.png";
 import Card2 from "../../images/cards/card2.png";
 import Card3 from "../../images/cards/card3.png";
 import Card4 from "../../images/cards/card4.png";
 
-const cards = [
-  {
-    icon: Card1,
-    title: "134 Biomarkers",
-    body: "America's most comprehensive blood test to understand your health at the cellular level.",
-  },
-  {
-    icon: Card2,
-    title: "Telehealth Unlimited",
-    body: "One year of access to our medical team to interpret your results and guide you.",
-  },
-  {
-    icon: Card3,
-    title: "Hyper-personalized Health Plan",
-    body: "Insights and actions tailored to your biology to improve outcomes and sustainability.",
-  },
-  {
-    icon: Card4,
-    title: "Comprehensive Assessment",
-    body: "A 360° view of your health, risk factors, and prioritized recommendations.",
-  },
-];
+type FeatureCardProps = {
+  icon: string;
+  title: string;
+  body: string;
+  className?: string;
+};
+
+type TestimonialCardProps = {
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
+};
 
 const testimonials = [
   {
@@ -75,24 +65,25 @@ const testimonials = [
   },
 ];
 
-const FeatureCard = ({ icon, title, body }) => (
+const FeatureCard = ({
+  icon,
+  title,
+  body,
+  className = "",
+}: FeatureCardProps) => (
   <div
-    className="
-      glass-card
-      rounded-[28px]
-      p-6 md:p-8
-      border border-white/5
-      min-h-[160px] md:min-h-[320px] 
-      flex flex-col justify-between
-      transition-transform duration-200 
-      w-80 xl:w-full
-    "
+    className={[
+      "glass-card relative w-full h-full overflow-visible",
+      "min-h-[220px] sm:min-h-[240px] md:min-h-[260px]",
+      "p-5 sm:p-6",
+      className,
+    ].join(" ")}
   >
-    <div>
-      <h4 className="text-[#0EFFEB] text-[20px] md:text-[22px] font-semibold tracking-tight mb-2">
+    <div className="pr-2">
+      <h4 className="text-[#0EFFEB] text-[18px] sm:text-[20px] md:text-[22px] font-semibold tracking-tight mb-2">
         {title}
       </h4>
-      <p className="text-white/90 leading-relaxed text-[15px] md:text-base">
+      <p className="text-white/90 leading-relaxed text-[14px] sm:text-[15px] md:text-base">
         {body}
       </p>
     </div>
@@ -101,13 +92,20 @@ const FeatureCard = ({ icon, title, body }) => (
       <img
         src={icon}
         alt={title}
-        className="w-28 h-28 md:w-44 md:h-44 object-contain object-center max-w-full max-h-full"
+        className="
+          w-28 h-28 md:w-44 md:h-44 object-contain object-center max-w-full max-h-full
+        "
       />
     </div>
   </div>
 );
 
-const TestimonialCard = ({ quote, name, role, avatar }) => (
+const TestimonialCard = ({
+  quote,
+  name,
+  role,
+  avatar,
+}: TestimonialCardProps) => (
   <div
     className="
       break-inside-avoid
@@ -138,13 +136,13 @@ const TestimonialCard = ({ quote, name, role, avatar }) => (
 
 const ServicesSection = () => {
   const navigate = useNavigate();
-
+  //bg-gradient-to-t from-[#03553e] to-[#000000]
   return (
     <div
       id="services"
-      className="bg-[#0D0D0D] flex flex-col lg:flex-row items-stretch justify-center px-4 py-8 sm:py-12"
+      className="bg-gradient-to-b from-transparent to-[#0D0D0D] flex flex-col lg:flex-row items-stretch justify-center px-4 py-8 sm:py-12"
     >
-      <section className="flex w-full max-w-7xl gap-6 bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 sm:p-6 relative overflow-hidden">
+      <section className="flex w-full max-w-7xl gap-6 bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 sm:p-6 relative overflow-visible lg:overflow-hidden">
         <aside className="hidden lg:flex w-48 shrink-0 py-4 justify-center items-center h-full">
           <Sidebar />
         </aside>
@@ -160,16 +158,9 @@ const ServicesSection = () => {
             <button
               className="
                 justify-self-start md:justify-self-end
-                bg-[#0EFFEB]
-                text-black
-                px-5 py-3
-                rounded-full
-                font-medium
-                cursor-pointer
-                text-sm
-                inline-flex items-center gap-2
-                hover:opacity-90 active:opacity-80
-                transition
+                bg-[#0EFFEB] text-black px-5 py-3 rounded-full font-medium
+                cursor-pointer text-sm inline-flex items-center gap-2
+                hover:opacity-90 active:opacity-80 transition
                 focus:outline-none focus:ring-2 focus:ring-[#0EFFEB]/50
               "
               onClick={() => navigate("/register")}
@@ -186,15 +177,53 @@ const ServicesSection = () => {
             <div className="h-px w-full bg-white/10" />
           </div>
 
-          <div className="flex flex-nowrap md:gap-4 xl:gap-6 overflow-x-auto pb-4 pr-4 scrollbar-hidden snap-x snap-mandatory">
-            {cards.map((c, i) => (
-              <div
-                key={i}
-                className="min-w-[70%] sm:min-w-[20rem] md:min-w-[22rem] lg:min-w-[24rem] xl:min-w-[6rem] flex-shrink-0 snap-start last:mr-2"
-              >
-                <FeatureCard {...c} />
+          <div className="w-76 xl:w-[1000px] mx-auto">
+            <div
+              className="
+                flex overflow-x-auto snap-x snap-mandatory
+                space-x-12 sm:space-x-6          
+                pb-4 -mx-4 sm:-mx-6 px-4 sm:px-6
+                scroll-pl-4 last:pr-2            
+                overscroll-x-contain
+                [&::-webkit-scrollbar]:hidden     
+                [-ms-overflow-style:none]         
+                [scrollbar-width:none]  
+              "
+              role="region"
+              aria-label="Servicios"
+            >
+              <div className="relative z-0 shrink-0 w-[85vw] min-w-[300px] sm:w-[70vw] md:w-[360px] lg:w-[380px] snap-center md:snap-start">
+                <FeatureCard
+                  icon={Card1}
+                  title="134 Biomarkers"
+                  body="America's most comprehensive blood test to understand your health at the cellular level."
+                />
               </div>
-            ))}
+
+              <div className="relative z-0 shrink-0 w-[85vw] min-w-[300px] sm:w-[70vw] md:w-[360px] lg:w-[380px] snap-center md:snap-start">
+                <FeatureCard
+                  icon={Card2}
+                  title="Personal Training"
+                  body="Get one-on-one coaching from our expert trainers."
+                />
+              </div>
+
+              <div className="relative z-0 shrink-0 w-[85vw] min-w-[300px] sm:w-[70vw] md:w-[360px] lg:w-[380px] snap-center md:snap-start">
+                <FeatureCard
+                  icon={Card3}
+                  title="Nutrition Guidance"
+                  body="Receive personalized nutrition plans to fuel your fitness journey."
+                />
+              </div>
+
+              <div className="relative z-0 shrink-0 w-[85vw] min-w-[300px] sm:w-[70vw] md:w-[360px] lg:w-[380px] snap-center md:snap-start">
+                <FeatureCard
+                  icon={Card4}
+                  title="Mental Wellness"
+                  body="Access to mental health resources and support."
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

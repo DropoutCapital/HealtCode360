@@ -143,25 +143,25 @@ const Header = () => {
     <header className="w-full px-9 py-8 z-50 relative ">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <div className="hidden md:flex items-center justify-between flex-1 mx-6">
-          <nav className="flex items-center space-x-10">
+          <nav className="flex items-center space-x-5">
             <a
               href="#about"
               onClick={onNavLinkClick}
-              className={`${linkColorClass} font-medium`}
+              className={`${linkColorClass} font-normal`}
             >
               Reason for being
             </a>
             <a
               href="#partners"
               onClick={onNavLinkClick}
-              className={`${linkColorClass} font-medium`}
+              className={`${linkColorClass} font-normal`}
             >
               How it works
             </a>
             <a
               href="#services"
               onClick={onNavLinkClick}
-              className={`${linkColorClass} font-medium`}
+              className={`${linkColorClass} font-normal`}
             >
               Services
             </a>
@@ -169,7 +169,7 @@ const Header = () => {
 
           <Link
             to="/"
-            className={`font-extrabold text-6xl tracking-wide ${activeBrandColor}  md:text-xl transition-all duration-300 ease-out select-none ${
+            className={`font-semibold mr-14 text-6xl tracking-wide ${activeBrandColor}  md:text-3xl transition-all duration-300 ease-out select-none ${
               showBrand
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-95 pointer-events-none"
@@ -178,17 +178,17 @@ const Header = () => {
             healthcode360
           </Link>
 
-          <div className="flex items-center space-x-10">
+          <div className="flex items-center space-x-5">
             <a
               href="#contact"
               onClick={onNavLinkClick}
-              className={`${linkColorClass} font-medium`}
+              className={`${linkColorClass} font-normal`}
             >
               Contact us
             </a>
             <Link
               to="/register"
-              className={`group inline-flex items-center font-semibold ${joinUsColor}`}
+              className={`group inline-flex items-center font-normal ${joinUsColor}`}
             >
               <span className={`mr-2 border-b-2 ${joinUsBorder}`}>
                 Join us today
@@ -201,7 +201,7 @@ const Header = () => {
         <button
           onClick={toggleMenu}
           className={`md:hidden ${
-            isDarkBackground ? "text-white" : "text-slate-800"
+            isDarkBackground ? "text-teal-600" : "text-black"
           } z-50 focus:outline-none`}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}

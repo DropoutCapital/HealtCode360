@@ -12,9 +12,9 @@ import Register from "./pages/register/register";
 function HomePage() {
   return (
     <div className="relative min-h-screen overflow-x-hidden pt-20 ">
-      <div className="bg-blend-multiply bg-gradient-to-b from-black  via-[#00100E] to-[#002F2A]">
+      <div className="bg-blend-multiply bg-gradient-to-b from-black  via-[#000000] to-[#03553e]">
         <div className="fixed inset-0 w-screen h-screen bg-[url('/background.jpg')] brightness-50 bg-cover bg-center bg-no-repeat z-0" />
-        <div className="fixed inset-0 w-screen h-screen  bg-gradient-to-b from-black via-[#001A17] to-[#002F2A] opacity-80 z-10" />
+        <div className="fixed inset-0 w-screen h-screen  bg-gradient-to-b from-black to-[#03553e] opacity-80 z-10" />
         <div className="relative z-10">
           <section className="overflow-hidden flex flex-col px-6 py-6">
             <Hero />

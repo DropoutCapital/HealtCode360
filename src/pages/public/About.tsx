@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import Sidebar from "../../components/Layout/Sidebar";
-import MatrixEffect from "../../components/UI/MatrixEffect";
 import MatrixRain from "../../components/UI/MatrixRain";
 
 const About = () => {
@@ -13,15 +12,16 @@ const About = () => {
         id="preAbout"
         className="bg-[url('/background.jpg')]  bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl"
       >
-        <section className="px-6 lg:px-12 xl:px-20 py-12 lg:py-20 min-h-screen bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl ">
+        <section className="px-6 lg:px-12 xl:px-20 py-12 lg:py-20 min-h-screen bg-white/40 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl ">
           <div className="w-full h-96 max-w-6xl text-left">
-            <h6 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight mb-8">
+            <h6 className="text-2xl lg:text-2xl xl:text-3xl font-bold text-gray-900 leading-tight mb-8">
               HEALTH ACCESS TO EVERYONE
             </h6>
 
-            <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-12">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-12">
               <span className="text-teal-600">$1</span> a Day unlocks your
-              health accesible prevention, covered by insurance.
+              health
+              <br /> accesible prevention, covered by insurance.
             </h1>
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-center gap-6 mb-20">
               <button
@@ -65,7 +65,6 @@ const About = () => {
         <div className="absolute inset-x-0 bottom-0 h-2  z-10 pointer-events-none bg-gradient-to-t from-white via-white to-transparent" />
         <div className="relative z-20 max-w-6xl mx-auto mb-64">
           <div className="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
-            {/* Sidebar a la izquierda, solo en desktop */}
             <aside className="hidden lg:block sticky top-32 self-start">
               <Sidebar />
             </aside>
@@ -85,10 +84,6 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="relative overflow-hidden w-full -mt-[253px]">
-        <MatrixEffect />
       </section>
     </main>
   );
