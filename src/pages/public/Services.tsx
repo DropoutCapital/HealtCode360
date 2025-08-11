@@ -82,11 +82,10 @@ const FeatureCard = ({ icon, title, body }) => (
       rounded-[28px]
       p-6 md:p-8
       border border-white/5
-      shadow-lg
-      min-h-[320px] 
+      min-h-[160px] md:min-h-[320px] 
       flex flex-col justify-between
-      transition-transform duration-200 hover:-translate-y-0.5
-      
+      transition-transform duration-200 
+      w-80 xl:w-full
     "
   >
     <div>
@@ -98,11 +97,11 @@ const FeatureCard = ({ icon, title, body }) => (
       </p>
     </div>
 
-    <div className="relative md:absolute bottom-0 w-full flex justify-center">
+    <div className="relative md:absolute bottom-0 w-full flex justify-center overflow-hidden">
       <img
         src={icon}
         alt={title}
-        className="w-36 h-36 md:w-48 md:h-48 object-contain object-center"
+        className="w-28 h-28 md:w-44 md:h-44 object-contain object-center max-w-full max-h-full"
       />
     </div>
   </div>
@@ -145,7 +144,7 @@ const ServicesSection = () => {
       id="services"
       className="bg-[#0D0D0D] flex flex-col lg:flex-row items-stretch justify-center px-4 py-8 sm:py-12"
     >
-      <section className="flex w-full max-w-7xl gap-6 bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 sm:p-6">
+      <section className="flex w-full max-w-7xl gap-6 bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 sm:p-6 relative overflow-hidden">
         <aside className="hidden lg:flex w-48 shrink-0 py-4 justify-center items-center h-full">
           <Sidebar />
         </aside>
@@ -187,11 +186,11 @@ const ServicesSection = () => {
             <div className="h-px w-full bg-white/10" />
           </div>
 
-          <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hidden">
+          <div className="flex flex-nowrap md:gap-4 xl:gap-6 overflow-x-auto pb-4 pr-4 scrollbar-hidden snap-x snap-mandatory">
             {cards.map((c, i) => (
               <div
                 key={i}
-                className="min-w-[280px] md:min-w-[320px] xl:min-w-[40px] flex-shrink-0"
+                className="min-w-[70%] sm:min-w-[20rem] md:min-w-[22rem] lg:min-w-[24rem] xl:min-w-[6rem] flex-shrink-0 snap-start last:mr-2"
               >
                 <FeatureCard {...c} />
               </div>
