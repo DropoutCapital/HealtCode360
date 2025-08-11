@@ -201,7 +201,10 @@ const ServicesSection = () => {
 
 const Testimonials = () => {
   return (
-    <section className="relative bg-[#0D0D0D] px-4 py-8 sm:py-12 mt-0">
+    <section
+      id="testimonials"
+      className="relative bg-[#0D0D0D] px-4 py-8 sm:py-12 mt-0"
+    >
       <div className="relative  max-w-7xl  bg-[#101010] rounded-3xl border border-white/5 mx-auto p-4 ">
         <div className="relative text-center max-w-3xl mx-auto">
           <p className="text-[#0EFFEB] text-sm mb-2 m-12">Social Proof</p>

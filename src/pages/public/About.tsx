@@ -6,7 +6,10 @@ import MatrixRain from "../../components/UI/MatrixRain";
 const About = () => {
   return (
     <main className="w-full min-h-screen bg-transparent">
-      <div className="bg-[url('/background.jpg')]  bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl">
+      <div
+        id="preAbout"
+        className="bg-[url('/background.jpg')]  bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl"
+      >
         <section className="px-6 lg:px-12 xl:px-20 py-12 lg:py-20 min-h-screen bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl ">
           <div className="w-full h-96 max-w-6xl text-left">
             <h6 className="text-2xl lg:text-3xl xl:text-4xl font-bold text-gray-900 leading-tight mb-8">

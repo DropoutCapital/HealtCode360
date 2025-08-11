@@ -31,6 +31,26 @@ const contrastRatio = (L1: number, L2: number) => {
   return (light + 0.05) / (dark + 0.05);
 };
 
+// Find nearest ancestor section id
+const findNearestSectionId = (el: Element | null): string | null => {
+  let node: Element | null = el;
+  while (node) {
+    if ((node as HTMLElement).id) return (node as HTMLElement).id;
+    node = (node.parentElement as Element) || null;
+  }
+  return null;
+};
+
+const WHITE_TEXT_SECTIONS = new Set([
+  "hero",
+  "partners",
+  "prevention",
+  "services",
+  "testimonials",
+  "contact",
+]);
+const BLACK_TEXT_SECTIONS = new Set(["preabout", "about", "footer"]);
+
 const Header = () => {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -67,10 +87,26 @@ const Header = () => {
         (headerEl as HTMLElement).style.pointerEvents = "none";
         const midX = Math.floor(window.innerWidth / 2);
         const rect = headerEl.getBoundingClientRect();
-        const midY = Math.max(0, Math.floor(rect.top + rect.height / 2));
+        const midY = Math.min(
+          window.innerHeight - 1,
+          Math.max(0, Math.floor(rect.bottom + 1))
+        );
         let underEl = document.elementFromPoint(midX, midY);
         (headerEl as HTMLElement).style.pointerEvents = prev;
 
+        // Decide color based on section IDs first (explicit override),
+        // fallback to background luminance when not in a listed section.
+        const sectionId = findNearestSectionId(underEl)?.toLowerCase() || null;
+        if (sectionId && WHITE_TEXT_SECTIONS.has(sectionId)) {
+          setIsDarkBackground(true);
+          return;
+        }
+        if (sectionId && BLACK_TEXT_SECTIONS.has(sectionId)) {
+          setIsDarkBackground(false);
+          return;
+        }
+
+        // Fallback: compute contrast from effective background
         const bgColor = getEffectiveBackgroundColor(underEl || headerEl);
         const rgb = bgColor.match(/\d+/g)?.map(Number) || [255, 255, 255];
         const Lbg = relativeLuminance(rgb[0], rgb[1], rgb[2]);

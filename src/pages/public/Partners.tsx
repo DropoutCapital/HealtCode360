@@ -77,7 +77,10 @@ const InitialPartnership = () => {
 
 const PreventionSection = () => {
   return (
-    <section className="px-4 sm:px-6 md:px-10 py-14 sm:py-16 lg:py-20 bg-gradient-to-b from-transparent to-[#0D0D0D]">
+    <section
+      id="prevention"
+      className="px-4 sm:px-6 md:px-10 py-14 sm:py-16 lg:py-20 bg-gradient-to-b from-transparent to-[#0D0D0D]"
+    >
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-white font-bold tracking-[-0.02em] leading-tight text-4xl sm:text-5xl lg:text-6xl">
           Prevention Can’t Wait

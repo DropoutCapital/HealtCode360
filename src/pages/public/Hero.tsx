@@ -2,7 +2,10 @@ import MedicalCrossAnimation from "../../components/UI/MedicalCrossAnimation";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen px-8 flex items-center justify-center ">
+    <div
+      id="hero"
+      className="relative min-h-screen px-8 flex items-center justify-center "
+    >
       <div className="absolute inset-0 flex items-center justify-center z-0 -mt-36">
         <MedicalCrossAnimation
           size={460}
