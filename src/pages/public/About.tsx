@@ -10,7 +10,7 @@ const About = () => {
     <main className="w-full min-h-screen bg-transparent">
       <div
         id="preAbout"
-        className="bg-[url('/background.jpg')]  bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl"
+        className="bg-[url('/background.jpg')]  bg-white/10 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl -mt-6"
       >
         <section className="px-6 lg:px-12 xl:px-20 py-12 lg:py-20 min-h-screen bg-white/40 backdrop-blur-md rounded-tl-2xl rounded-tr-2xl ">
           <div className="w-full h-96 max-w-6xl text-left">
@@ -63,7 +63,7 @@ const About = () => {
         </div>
         <div className="absolute inset-x-0 top-0 h-40 sm:h-48 lg:h-56 z-10 pointer-events-none bg-gradient-to-b from-white via-white/80 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-2  z-10 pointer-events-none bg-gradient-to-t from-white via-white to-transparent" />
-        <div className="relative z-20 max-w-6xl mx-auto mb-64">
+        <div className="relative z-20 max-w-6xl mx-auto mb-32">
           <div className="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-12">
             <aside className="hidden lg:block sticky top-32 self-start">
               <Sidebar />

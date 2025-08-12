@@ -169,7 +169,7 @@ const Header = () => {
 
           <Link
             to="/"
-            className={`font-semibold mr-14 text-6xl tracking-wide ${activeBrandColor}  md:text-3xl transition-all duration-300 ease-out select-none ${
+            className={`font-semibold mr-20 text-6xl tracking-wide ${activeBrandColor}  md:text-3xl transition-all duration-300 ease-out select-none ${
               showBrand
                 ? "opacity-100 scale-100"
                 : "opacity-0 scale-95 pointer-events-none"

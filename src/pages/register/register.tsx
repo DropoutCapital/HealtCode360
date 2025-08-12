@@ -155,12 +155,15 @@ function Register() {
     return (
       <div className="relative overflow-hidden">
         <div className="absolute top-8 left-8 transform transition-all duration-500 ease-out">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen transform transition-all duration-700 ease-out">
@@ -190,14 +193,17 @@ function Register() {
   // Pantalla de carga durante envío
   if (isSubmitting) {
     return (
-      <div className="min-h-screen  relative">
+      <div className="min-h-screen relative">
         <div className="absolute top-8 left-8">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen">
@@ -218,12 +224,15 @@ function Register() {
     return (
       <div className="min-h-screen relative">
         <div className="absolute top-8 left-8">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen px-8">
@@ -279,12 +288,15 @@ function Register() {
     return (
       <div className="min-h-screen bg-gray-200 relative">
         <div className="absolute top-8 left-8">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen px-8">
@@ -364,12 +376,15 @@ function Register() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <div className="absolute top-8 left-8 transform transition-all duration-500 ease-out">
-        <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+        <Link
+          to="/"
+          className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+        >
           <span>HealtCode</span>
           <span className="text-teal-600 font-bold flex items-center space-x-0.5">
             <span>360</span>
           </span>
-        </h1>
+        </Link>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen px-8">

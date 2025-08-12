@@ -1,3 +1,4 @@
+import ArcCircles from "../../components/UI/Circle";
 import MedicalCrossAnimation from "../../components/UI/MedicalCrossAnimation";
 
 const Hero = () => {
@@ -6,7 +7,10 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen px-8 flex items-center justify-center "
     >
-      <div className="absolute inset-0 flex items-center justify-center z-0 -mt-36">
+      <div className="absolute inset-0 z-0">
+        <ArcCircles />
+      </div>
+      <div className="absolute inset-0 flex items-center justify-center z-[2] -mt-36">
         <MedicalCrossAnimation
           size={600}
           rows={24}
