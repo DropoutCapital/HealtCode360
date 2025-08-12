@@ -1,10 +1,8 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
   const navigate = useNavigate();
-  const [isOpen, setIsOpen] = useState(false);
   const currentYear = new Date().getFullYear();
 
   const smoothScrollToSelector = (selector: string) => {
@@ -21,7 +19,7 @@ const Footer = () => {
     const href = e.currentTarget.getAttribute("href") || "";
     if (href.startsWith("#")) {
       e.preventDefault();
-      setIsOpen(false);
+
       smoothScrollToSelector(href);
     }
   };

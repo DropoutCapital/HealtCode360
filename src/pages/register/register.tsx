@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "../../supabase/supabase";
 import { ArrowRight, Clock, CheckCircle, XCircle } from "lucide-react";
 
@@ -57,7 +57,6 @@ const US_STATES = [
 ];
 
 function Register() {
-  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -117,7 +116,7 @@ function Register() {
 
   const handleRetry = () => {
     setSubmissionStatus(null);
-    setCurrentStep(3); // Volver al último paso
+    setCurrentStep(3);
   };
 
   const handleStartOver = () => {
@@ -130,8 +129,7 @@ function Register() {
     });
   };
 
-  React.useEffect(() => {
-    // If user arrives here via navigation, ensure we start at top
+  useEffect(() => {
     window.scrollTo({ top: 0 });
   }, []);
 
@@ -156,17 +154,18 @@ function Register() {
   if (currentStep === 0) {
     return (
       <div className="relative overflow-hidden">
-        {/* Logo */}
         <div className="absolute top-8 left-8 transform transition-all duration-500 ease-out">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
-        {/* Main content */}
         <div className="flex flex-col items-center justify-center min-h-screen transform transition-all duration-700 ease-out">
           <h2 className="text-3xl font-medium text-gray-800 mb-12 transform transition-all duration-500 delay-200 ease-out">
             Sign-up for healtcode360
@@ -194,14 +193,17 @@ function Register() {
   // Pantalla de carga durante envío
   if (isSubmitting) {
     return (
-      <div className="min-h-screen  relative">
+      <div className="min-h-screen relative">
         <div className="absolute top-8 left-8">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen">
@@ -222,12 +224,15 @@ function Register() {
     return (
       <div className="min-h-screen relative">
         <div className="absolute top-8 left-8">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen px-8">
@@ -283,12 +288,15 @@ function Register() {
     return (
       <div className="min-h-screen bg-gray-200 relative">
         <div className="absolute top-8 left-8">
-          <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+          <Link
+            to="/"
+            className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+          >
             <span>HealtCode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
-          </h1>
+          </Link>
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen px-8">
@@ -368,12 +376,15 @@ function Register() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <div className="absolute top-8 left-8 transform transition-all duration-500 ease-out">
-        <h1 className="text-2xl font-medium text-gray-800 flex items-center space-x-1">
+        <Link
+          to="/"
+          className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
+        >
           <span>HealtCode</span>
           <span className="text-teal-600 font-bold flex items-center space-x-0.5">
             <span>360</span>
           </span>
-        </h1>
+        </Link>
       </div>
 
       <div className="flex flex-col items-center justify-center min-h-screen px-8">
