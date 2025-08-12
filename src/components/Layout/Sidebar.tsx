@@ -47,7 +47,7 @@ const Sidebar = () => {
               className={`${
                 activeSection === item.id
                   ? "text-teal-600 font-semibold"
-                  : "text-gray-500"
+                  : "text-gray-500 font-normal"
               }`}
             >
               {item.label}

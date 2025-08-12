@@ -136,7 +136,7 @@ const TestimonialCard = ({
 
 const ServicesSection = () => {
   const navigate = useNavigate();
-  //bg-gradient-to-t from-[#03553e] to-[#000000]
+
   return (
     <div
       id="services"
@@ -250,15 +250,18 @@ const Testimonials = () => {
 
         <div className="relative mt-20">
           <div
-            className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-[88%] h-48 rounded-[999px]
-                  bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0.1)_35%,transparent_70%)]
-                  blur-2xl opacity-70"
-          />
-
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#101010]  to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#101010] to-transparent" />
-
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 relative z-0">
+            className="columns-1 sm:columns-2 lg:columns-3 gap-6 relative z-0"
+            style={{
+              WebkitMaskImage:
+                "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 20%, black 90%, transparent 100%)",
+              maskImage:
+                "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 40%, black 90%, transparent 100%)",
+              WebkitMaskComposite: "intersect",
+              maskComposite: "intersect",
+              WebkitMaskSize: "cover, cover",
+              maskSize: "cover, cover",
+            }}
+          >
             {testimonials.map((t, i) => (
               <TestimonialCard key={i} {...t} />
             ))}
