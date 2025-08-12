@@ -34,7 +34,7 @@ const Sidebar = () => {
 
   return (
     <aside className="relative w-40 pl-4">
-      <div className="absolute left-1 h-[190px] w-1 bg-gray-300 rounded-full top-1" />
+      <div className="absolute left-1 h-[170px] w-1 bg-gray-300 rounded-full top-1" />
 
       <nav className="flex flex-col space-y-6 mt-2 relative z-10 text-sm">
         {navItems.map((item) => (
@@ -46,8 +46,8 @@ const Sidebar = () => {
               href={`#${item.id}`}
               className={`${
                 activeSection === item.id
-                  ? "text-teal-600 font-semibold"
-                  : "text-gray-500 font-normal"
+                  ? "text-teal-600 font-semibold text-xs"
+                  : "text-gray-500 font-normal text-xs"
               }`}
             >
               {item.label}

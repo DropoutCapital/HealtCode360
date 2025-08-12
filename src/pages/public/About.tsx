@@ -45,7 +45,7 @@ const About = () => {
         </section>
       </div>
 
-      <section
+      {/* <section
         id="about"
         className="relative px-6 lg:px-12 xl:px-20 pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-white"
       >
@@ -69,7 +69,7 @@ const About = () => {
               <Sidebar />
             </aside>
 
-            {/* Contenido principal */}
+            
             <div className="mb-1 mt-48 lg:mt-32 text-center">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-10">
                 The code <span className="text-teal-600">to take</span>
@@ -77,6 +77,47 @@ const About = () => {
                 <span className="block">Zero guesswork.</span>
               </h2>
 
+              <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                We decode the signals of your body and turn them into real
+                answers, actionable insights and <br /> personalizable support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+      <section
+        id="about"
+        className="relative px-6 lg:px-12 xl:px-20 pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-white"
+      >
+        <div className="absolute inset-x-0 top-0 h-40 sm:h-48 lg:h-56 z-0 pointer-events-none">
+          <MatrixRain
+            height={200}
+            color="#00c9a7"
+            backgroundFade="rgba(255,255,255,0.15)"
+            fontSize={16}
+            density={1}
+            minSpeed={0.05}
+            maxSpeed={0.05}
+            showEdgeFades={false}
+          />
+        </div>
+        <div className="absolute inset-x-0 top-0 h-40 sm:h-48 lg:h-56 z-10 pointer-events-none bg-gradient-to-b from-white via-white/80 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-2  z-10 pointer-events-none bg-gradient-to-t from-white via-white to-transparent" />
+
+        <aside className="hidden lg:block absolute left-6 lg:left-3 xl:left-24 top-0 z-30 h-full">
+          <div className="sticky top-32 self-start">
+            <Sidebar />
+          </div>
+        </aside>
+
+        <div className="flex z-20 max-w-6xl mx-auto mb-32 lg:pl-[220px]">
+          <div className="lg:grid lg:grid-cols-1 lg:gap-12">
+            <div className="mb-1 mt-48 lg:mt-32 text-center">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-10">
+                The code <span className="text-teal-600">to take</span>
+                <span className="block">control. One test.</span>
+                <span className="block">Zero guesswork.</span>
+              </h2>
               <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
                 We decode the signals of your body and turn them into real
                 answers, actionable insights and <br /> personalizable support.
