@@ -7,7 +7,7 @@ const Hero = () => {
       id="hero"
       className="relative min-h-screen px-8 flex items-center justify-center "
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 hidden lg:block">
         <ArcCircles />
       </div>
       <div className="absolute inset-0 flex items-center justify-center z-[2] -mt-36">
