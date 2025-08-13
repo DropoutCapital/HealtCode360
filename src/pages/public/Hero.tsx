@@ -36,7 +36,7 @@ const Hero = () => {
           style={{ textShadow: "0px 2px 6px rgba(0,0,0,0.7)" }}
           className="text-teal-300 uppercase font-semibold tracking-[0.25em] text-2xl md:text-3xl lg:text-4xl"
         >
-          HEALTH ACCESS TO EVERYONE
+          Elite Prevention, at Home, and Insured
         </h2>
       </div>
     </div>
