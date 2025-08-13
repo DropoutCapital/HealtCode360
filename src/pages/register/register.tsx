@@ -250,8 +250,8 @@ function Register() {
             </h2>
 
             <p className="text-gray-600 mb-8 transform transition-all duration-500 delay-400 ease-out">
-              Hi {formData.fullName}que haya puesto You're officially on the
-              waitlist Welcome to Healthcode360
+              Hi {formData.fullName} You're officially on the waitlist Welcome
+              to Healthcode360
             </p>
 
             {/* <div className="bg-white p-6 rounded-lg shadow-sm mb-8 transform transition-all duration-500 delay-500 ease-out">
