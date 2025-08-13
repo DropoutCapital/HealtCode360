@@ -159,7 +159,7 @@ function Register() {
             to="/"
             className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
           >
-            <span>HealtCode</span>
+            <span>healthcode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
@@ -167,8 +167,8 @@ function Register() {
         </div>
 
         <div className="flex flex-col items-center justify-center min-h-screen transform transition-all duration-700 ease-out">
-          <h2 className="text-3xl font-medium text-gray-800 mb-12 transform transition-all duration-500 delay-200 ease-out">
-            Sign-up for healtcode360
+          <h2 className="text-3xl font-bold text-gray-800 mb-12 transform transition-all duration-500 delay-200 ease-out">
+            Sign-up for healthcode360
           </h2>
 
           <button
@@ -199,7 +199,7 @@ function Register() {
             to="/"
             className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
           >
-            <span>HealtCode</span>
+            <span>healthcode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
@@ -228,7 +228,7 @@ function Register() {
             to="/"
             className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
           >
-            <span>HealtCode</span>
+            <span>healthcode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
@@ -292,7 +292,7 @@ function Register() {
             to="/"
             className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
           >
-            <span>HealtCode</span>
+            <span>healthcode</span>
             <span className="text-teal-600 font-bold flex items-center space-x-0.5">
               <span>360</span>
             </span>
@@ -380,7 +380,7 @@ function Register() {
           to="/"
           className="text-2xl font-medium text-gray-800 flex items-center space-x-1"
         >
-          <span>HealtCode</span>
+          <span>healthcode</span>
           <span className="text-teal-600 font-bold flex items-center space-x-0.5">
             <span>360</span>
           </span>

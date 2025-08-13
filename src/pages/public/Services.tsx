@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Sidebar from "../../components/Layout/Sidebar";
 import { ArrowUpRight } from "lucide-react";
-import Card1 from "../../images/cards/card1.png";
-import Card2 from "../../images/cards/card2.png";
-import Card3 from "../../images/cards/card3.png";
-import Card4 from "../../images/cards/card4.png";
+import Card1 from "../../images/cards/card1Cortada-removebg-preview.png";
+import Card2 from "../../images/cards/card2Cortada-removebg-preview.png";
+import Card3 from "../../images/cards/card3Cortada-removebg-preview.png";
+import Card4 from "../../images/cards/card4Cortada-removebg-preview.png";
 
 type FeatureCardProps = {
   icon: string;
@@ -74,7 +74,7 @@ const FeatureCard = ({
   <div
     className={[
       "glass-card relative w-full h-full overflow-visible",
-      "min-h-[220px] sm:min-h-[240px] md:min-h-[260px]",
+      "min-h-[220px] sm:min-h-[240px] md:min-h-[380px]",
       "p-5 sm:p-6",
       className,
     ].join(" ")}
@@ -88,12 +88,89 @@ const FeatureCard = ({
       </p>
     </div>
 
-    <div className="relative md:absolute bottom-0 w-full flex justify-center overflow-hidden">
+    <div className="relative md:absolute -bottom-[0px] w-full flex justify-center overflow-hidden">
+      {/* <img
+        src={icon}
+        alt={title}
+        className="
+          w-36 h-36 md:w-44 md:h-44 object-contain object-center max-w-full max-h-full
+        "
+      /> */}
       <img
         src={icon}
         alt={title}
         className="
-          w-28 h-28 md:w-44 md:h-44 object-contain object-center max-w-full max-h-full
+          w-52 h-52 md:w-60 md:h-60  object-contain object-center max-w-full max-h-full
+        "
+      />
+    </div>
+  </div>
+);
+
+const FeatureCard2 = ({
+  icon,
+  title,
+  body,
+  className = "",
+}: FeatureCardProps) => (
+  <div
+    className={[
+      "glass-card relative w-full h-full overflow-visible",
+      "min-h-[220px] sm:min-h-[240px] md:min-h-[380px]",
+      "p-5 sm:p-6",
+      className,
+    ].join(" ")}
+  >
+    <div className="pr-2">
+      <h4 className="text-[#0EFFEB] text-[18px] sm:text-[20px] md:text-[22px] font-semibold tracking-tight mb-2">
+        {title}
+      </h4>
+      <p className="text-white/90 leading-relaxed text-[14px] sm:text-[15px] md:text-base">
+        {body}
+      </p>
+    </div>
+
+    <div className="relative md:absolute -bottom-[3px] w-full flex justify-center overflow-hidden">
+      <img
+        src={icon}
+        alt={title}
+        className="
+          w-52 h-52 md:w-60 md:h-60  object-contain object-center max-w-full max-h-full
+        "
+      />
+    </div>
+  </div>
+);
+
+const FeatureCard3 = ({
+  icon,
+  title,
+  body,
+  className = "",
+}: FeatureCardProps) => (
+  <div
+    className={[
+      "glass-card relative w-full h-full overflow-visible",
+      "min-h-[220px] sm:min-h-[240px] md:min-h-[380px]",
+      "p-5 sm:p-6",
+      className,
+    ].join(" ")}
+  >
+    <div className="pr-2">
+      <h4 className="text-[#0EFFEB] text-[18px] sm:text-[20px] md:text-[22px] font-semibold tracking-tight mb-2">
+        {title}
+      </h4>
+      <p className="text-white/90 leading-relaxed text-[14px] sm:text-[15px] md:text-base">
+        {body}
+      </p>
+    </div>
+
+    <div className="relative md:absolute -bottom-[12px] w-full flex justify-center overflow-hidden">
+      <img
+        src={icon}
+        alt={title}
+        className="
+          w-52 h-52 md:w-60 md:h-60  object-contain object-center max-w-full max-h-full
         "
       />
     </div>
@@ -193,7 +270,7 @@ const ServicesSection = () => {
               aria-label="Servicios"
             >
               <div className="relative z-0 shrink-0 w-[85vw] min-w-[300px] sm:w-[70vw] md:w-[360px] lg:w-[380px] snap-center md:snap-start">
-                <FeatureCard
+                <FeatureCard2
                   icon={Card1}
                   title="134 Biomarkers"
                   body="America's most comprehensive blood test to understand your health at the cellular level."
@@ -201,7 +278,7 @@ const ServicesSection = () => {
               </div>
 
               <div className="relative z-0 shrink-0 w-[85vw] min-w-[300px] sm:w-[70vw] md:w-[360px] lg:w-[380px] snap-center md:snap-start">
-                <FeatureCard
+                <FeatureCard3
                   icon={Card2}
                   title="Personal Training"
                   body="Get one-on-one coaching from our expert trainers."
