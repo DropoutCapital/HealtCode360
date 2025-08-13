@@ -229,7 +229,7 @@ const ServicesSection = () => {
             <div>
               <p className="text-[#0EFFEB] text-sm mb-2">Our services</p>
               <h1 className="text-white font-bold tracking-tight text-4xl sm:text-5xl md:text-6xl">
-                Wellness for $1
+                Wellness for $1 /day
               </h1>
             </div>
             <button

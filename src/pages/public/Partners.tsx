@@ -34,7 +34,7 @@ const Bullet = ({ children }: BulletProps) => (
   <div className="glass-pill px-5 sm:px-7 py-4 sm:py-5 text-slate-100/95  sm:w-auto">
     <div className="flex items-center gap-3">
       <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400/15 ring-1 ring-emerald-300/30">
-        <Heart className="w-4 h-4" />
+        <Heart className="w-4 h-4 text-[#0EFFEB]" />
       </span>
       <p className="text-sm sm:text-base leading-relaxed">{children}</p>
     </div>
@@ -56,7 +56,7 @@ const InitialPartnership = () => {
           <div className="flex-1 flex flex-col">
             <div className="mt-4 mb-8">
               <h1 className="text-white font-bold leading-tight tracking-[-0.02em] text-4xl sm:text-6xl lg:text-[64px]">
-                Healtcare from your
+                Healthcare from your
                 <br />
                 living room
               </h1>
@@ -65,22 +65,22 @@ const InitialPartnership = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               <FeatureCard
                 icon={Microscope}
-                title="Most Advanced Home Test"
-                subtitle="test in America"
+                title="Most Advanced Home Test in America"
+                //subtitle="test in America"
                 body="130+ biomarkers, no clinic visits."
               />
 
               <FeatureCard
                 icon={Video}
                 title="Unlimited Telehealth"
-                subtitle="Telehealt"
+                //subtitle="Telehealt"
                 body="Answers when you need them."
               />
 
               <FeatureCard
                 icon={ShieldPlus}
                 title="Personalized Plan"
-                subtitle="healt plan"
+                //subtitle="healt plan"
                 body="Built from your unique biology."
               />
             </div>
@@ -105,7 +105,9 @@ const PreventionSection = () => {
         <p className="mt-6 text-lg sm:text-2xl text-slate-100/90 leading-relaxed">
           90% of U.S. healthcare spending treats chronic disease.
           <br className="hidden sm:block" />
-          We help you prevent it before it starts.
+          We help you{" "}
+          <span className="text-[#0EFFEB] font-semibold">prevent it </span>{" "}
+          before it starts.
         </p>
 
         {/* <div className="mt-10 sm:mt-12 space-y-4">

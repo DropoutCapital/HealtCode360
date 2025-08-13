@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../../supabase/supabase";
-import { ArrowRight, Clock, CheckCircle, XCircle } from "lucide-react";
+import { ArrowRight, Clock, CheckCircle, XCircle, Lock } from "lucide-react";
 
 const US_STATES = [
   "Alabama",
@@ -168,14 +168,15 @@ function Register() {
 
         <div className="flex flex-col items-center justify-center min-h-screen transform transition-all duration-700 ease-out">
           <h2 className="text-3xl font-bold text-gray-800 mb-12 transform transition-all duration-500 delay-200 ease-out">
-            Sign-up for healthcode360
+            <Lock className="inline-block mr-2 text-teal-600 -mt-0.5" />
+            Beta Access Now Open [Limited Spots]
           </h2>
 
           <button
             onClick={handleStart}
             className="bg-teal-600 text-white cursor-pointer px-8 py-3 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-lg flex items-center gap-3"
           >
-            Start
+            Reserve My Spot
             <div className="bg-white rounded-full p-1">
               <ArrowRight className="w-5 h-5 text-teal-600" />
             </div>
@@ -249,11 +250,11 @@ function Register() {
             </h2>
 
             <p className="text-gray-600 mb-8 transform transition-all duration-500 delay-400 ease-out">
-              Your information has been stored correctly. Welcome to
-              HealtCode360!
+              Hi {formData.fullName}que haya puesto You're officially on the
+              waitlist Welcome to Healthcode360
             </p>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm mb-8 transform transition-all duration-500 delay-500 ease-out">
+            {/* <div className="bg-white p-6 rounded-lg shadow-sm mb-8 transform transition-all duration-500 delay-500 ease-out">
               <h3 className="text-lg font-medium text-gray-800 mb-4">
                 Your Information:
               </h3>
@@ -268,7 +269,7 @@ function Register() {
                   <strong>State:</strong> {formData.state}
                 </p>
               </div>
-            </div>
+            </div> */}
 
             <Link
               to="/"
