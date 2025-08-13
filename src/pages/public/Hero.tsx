@@ -28,13 +28,13 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col items-center justify-center text-center -mt-80">
         <h1
           style={{ textShadow: "0px 2px 6px rgba(0,0,0,0.7)" }}
-          className="text-white font-bold tracking-tight mb-6 text-5xl md:text-8xl lg:text-[145px] xl:text-[170px] 2xl:text-[200px] leading-tight"
+          className="text-white font-bold tracking-tight mb-6 text-5xl md:text-8xl lg:text-[100px] xl:text-[120px] 2xl:text-[140px] leading-tight"
         >
           healthcode360
         </h1>
         <h2
           style={{ textShadow: "0px 2px 6px rgba(0,0,0,0.7)" }}
-          className="text-teal-300 uppercase font-semibold tracking-[0.10em] text-2xl md:text-3xl lg:text-4xl -mt-8"
+          className="text-teal-300 uppercase font-semibold tracking-[0.10em] text-xl md:text-2xl lg:text-3xl -mt-8"
         >
           Elite Prevention, at Home, and Insured
         </h2>
