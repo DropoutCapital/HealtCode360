@@ -425,7 +425,7 @@ const Header = () => {
       <div className="flex items-center justify-between max-w-7xl mx-auto">
         <div className="hidden md:flex items-center justify-between flex-1 mx-6">
           <nav className="flex items-center space-x-6">
-            <a
+            {/* <a
               href="#about"
               onClick={onNavLinkClick}
               className={`${linkColorClass} font-normal transition-colors duration-200`}
@@ -445,9 +445,9 @@ const Header = () => {
               className={`${linkColorClass} font-normal transition-colors duration-200`}
             >
               Services
-            </a>
+            </a> */}
           </nav>
-
+          {/* 
           <Link
             to="/"
             className={`font-semibold mr-20 text-6xl tracking-wide ${activeBrandColor} md:text-3xl transition-all duration-300 ease-out select-none ${
@@ -457,7 +457,7 @@ const Header = () => {
             }`}
           >
             healthcode360
-          </Link>
+          </Link> */}
 
           <div className="flex items-center space-x-6">
             <a

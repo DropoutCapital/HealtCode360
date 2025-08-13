@@ -31,7 +31,7 @@ const FeatureCard = ({
 );
 
 const Bullet = ({ children }: BulletProps) => (
-  <div className="glass-pill px-5 sm:px-7 py-4 sm:py-5 text-slate-100/95">
+  <div className="glass-pill px-5 sm:px-7 py-4 sm:py-5 text-slate-100/95  sm:w-auto">
     <div className="flex items-center gap-3">
       <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400/15 ring-1 ring-emerald-300/30">
         <Heart className="w-4 h-4" />
@@ -65,23 +65,23 @@ const InitialPartnership = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               <FeatureCard
                 icon={Microscope}
-                title="Most “X” Lab"
+                title="Most Advanced Home Test"
                 subtitle="test in America"
-                body="Our network of licensed physicians allows us to serve you almost anywhere in the country."
+                body="130+ biomarkers, no clinic visits."
               />
 
               <FeatureCard
                 icon={Video}
-                title="Unlimited"
+                title="Unlimited Telehealth"
                 subtitle="Telehealt"
-                body="We already have agreements in place that facilitate the process of reimbursing your insurance."
+                body="Answers when you need them."
               />
 
               <FeatureCard
                 icon={ShieldPlus}
-                title="HyperPersonalized"
+                title="Personalized Plan"
                 subtitle="healt plan"
-                body="We operate in compliance with HIPAA and SOC-2 regulations to protect your information."
+                body="Built from your unique biology."
               />
             </div>
           </div>
@@ -103,12 +103,12 @@ const PreventionSection = () => {
         </h2>
 
         <p className="mt-6 text-lg sm:text-2xl text-slate-100/90 leading-relaxed">
-          90% of U.S. healthcare spending goes to
+          90% of U.S. healthcare spending treats chronic disease.
           <br className="hidden sm:block" />
-          treating chronic diseases.
+          We help you prevent it before it starts.
         </p>
 
-        <div className="mt-10 sm:mt-12 space-y-4">
+        {/* <div className="mt-10 sm:mt-12 space-y-4">
           <Bullet>
             Detect health risks with our panel of 134 biomarkers before they
             become problems.
@@ -123,6 +123,24 @@ const PreventionSection = () => {
             Follow your progress with regular updates and ongoing support from
             our licensed medical team.
           </Bullet>
+        </div> */}
+        <div className="mt-10 sm:mt-12 flex flex-col items-center">
+          <div className="w-full max-w-4xl space-y-4">
+            <Bullet>
+              Detect health risks with our panel of 134 biomarkers before they
+              become problems.
+            </Bullet>
+
+            <Bullet>
+              Receive AI-driven health insights and wellness protocols tailored
+              to your unique body chemistry.
+            </Bullet>
+
+            <Bullet>
+              Follow your progress with regular updates and ongoing support from
+              our licensed medical team.
+            </Bullet>
+          </div>
         </div>
       </div>
     </section>
