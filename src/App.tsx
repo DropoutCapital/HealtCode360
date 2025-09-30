@@ -6,6 +6,7 @@ import About from "./pages/public/About";
 import Partners from "./pages/public/Partners";
 import Services from "./pages/public/Services";
 import ContactUs from "./pages/public/ContactUs";
+import Team from "./pages/public/Team";
 import Footer from "./components/Layout/Footer";
 import Register from "./pages/register/register";
 
@@ -29,6 +30,7 @@ function HomePage() {
           <Partners />
           <Services />
           <ContactUs />
+          <Team />
           <Footer />
         </div>
       </div>
