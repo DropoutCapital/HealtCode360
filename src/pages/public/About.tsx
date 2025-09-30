@@ -99,22 +99,12 @@ const About = () => {
           <div className="lg:grid lg:grid-cols-1 lg:gap-12">
             <div className="mb-1 mt-48 lg:mt-32 text-center">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1] mb-10">
-                The code <span className="text-teal-600">to take</span>
-                <span className="block">
-                  {" "}
-                  <span className="text-teal-600">control.</span> One test.
-                </span>
-                <span className="block">Zero guesswork.</span>
+                The code to take <span className="text-teal-600">control.</span>
+                <br />
+                One test. Zero guesswork.
               </h2>
-              <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
-                {/* We decode the signals of your body and turn them into real
-                answers, actionable insights and <br /> personalizable support. */}
-                We decode the signals of your body and turn them into clear
-                answers <br />
-                From one at-home test, we analyze 130+ biomarkers to reveal your
-                current health, detect hidden risks early, and show you how to
-                improve. You get actionable insights, a tailored prevention
-                plan, and ongoing support to stay ahead of illness.
+              <p className="text-2xl text-gray-700 max-w-5xl mx-auto leading-relaxed">
+                We decode the signals of your body and turn them into clear answers. From one at-home test, we analyze 130+ biomarkers to reveal your current health, detect hidden risks early, and show you how to improve. You get actionable insights, a tailored prevention plan, and ongoing support to stay ahead of illness.
               </p>
             </div>
           </div>
