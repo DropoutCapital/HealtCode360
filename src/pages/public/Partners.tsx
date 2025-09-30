@@ -1,5 +1,5 @@
 import Sidebar from "../../components/Layout/Sidebar";
-import { Video, ShieldPlus, Microscope, Heart } from "lucide-react";
+import { Video, ShieldPlus, Microscope, Heart, ClipboardCheck, CreditCard, Home, FlaskConical, FileText, Target } from "lucide-react";
 
 type FeatureCardProps = {
   icon: React.ElementType;
@@ -10,6 +10,14 @@ type FeatureCardProps = {
 
 type BulletProps = {
   children: React.ReactNode;
+};
+
+type StepCardProps = {
+  icon: React.ElementType;
+  stepNumber: number;
+  title: string;
+  description: string;
+  isLast?: boolean;
 };
 
 const FeatureCard = ({
@@ -27,6 +35,40 @@ const FeatureCard = ({
       <p className="text-lg font-semibold text-white/90 mb-3">{subtitle}</p>
     )}
     <p className="text-slate-200/80 leading-relaxed text-base">{body}</p>
+  </div>
+);
+
+const StepCard = ({
+  icon: Icon,
+  stepNumber,
+  title,
+  description,
+  isLast = false,
+}: StepCardProps) => (
+  <div className="relative flex gap-6 group">
+    {/* Icon and Number Container */}
+    <div className="flex flex-col items-center">
+      <div className="relative flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-br from-[#00E0B8]/20 to-teal-500/20 border border-[#00E0B8]/40 backdrop-blur-sm">
+        <Icon className="w-7 h-7 text-[#00E0B8]" />
+        <div className="absolute -top-2 -right-2 flex items-center justify-center w-6 h-6 rounded-full bg-[#00E0B8] text-gray-900 text-xs font-bold">
+          {stepNumber}
+        </div>
+      </div>
+      {/* Connector Line */}
+      {!isLast && (
+        <div className="w-0.5 h-full min-h-[60px] bg-gradient-to-b from-[#00E0B8]/40 to-[#00E0B8]/10 mt-2" />
+      )}
+    </div>
+
+    {/* Content */}
+    <div className="flex-1 pb-8">
+      <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-[#00E0B8] transition-colors">
+        {title}
+      </h3>
+      <p className="text-slate-200/80 leading-relaxed">
+        {description}
+      </p>
+    </div>
   </div>
 );
 
@@ -54,34 +96,47 @@ const InitialPartnership = () => {
           </div>
 
           <div className="flex-1 flex flex-col">
-            <div className="mt-4 mb-8">
+            <div className="mt-4 mb-12">
               <h1 className="text-white font-bold leading-tight tracking-[-0.02em] text-4xl sm:text-6xl lg:text-[64px]">
-                Healthcare from your
-                <br />
-                living room
+                How it works
               </h1>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-              <FeatureCard
-                icon={Microscope}
-                title="Most Advanced Home Test in America"
-                //subtitle="test in America"
-                body="130+ biomarkers, no clinic visits."
+            <div className="max-w-3xl">
+              <StepCard
+                icon={ClipboardCheck}
+                stepNumber={1}
+                title="Submit & Verify"
+                description="Upload insurance, get approved"
               />
 
-              <FeatureCard
-                icon={Video}
-                title="Unlimited Telehealth"
-                //subtitle="Telehealt"
-                body="Answers when you need them."
+              <StepCard
+                icon={CreditCard}
+                stepNumber={2}
+                title="Pay"
+                description="Typically $399 if we can fully use insurance"
               />
 
-              <FeatureCard
-                icon={ShieldPlus}
-                title="Personalized Plan"
-                //subtitle="healt plan"
-                body="Built from your unique biology."
+              <StepCard
+                icon={Home}
+                stepNumber={3}
+                title="Home Collection"
+                description="Certified phlebotomist visits you"
+              />
+
+              <StepCard
+                icon={FlaskConical}
+                stepNumber={4}
+                title="Analysis"
+                description="Advanced lab testing of your sample"
+              />
+
+              <StepCard
+                icon={Target}
+                stepNumber={5}
+                title="Results & Implementation"
+                description="Comprehensive health report with personalized plan and guided support to execute your prevention strategy"
+                isLast={true}
               />
             </div>
           </div>
