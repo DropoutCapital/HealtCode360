@@ -12,7 +12,7 @@ import Register from "./pages/register/register";
 
 function HomePage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden pt-20 ">
+    <div className="relative min-h-screen overflow-x-hidden pt-20">
       <div className="bg-blend-multiply bg-gradient-to-b from-[#000000]  via-[#00312C] to-[#114D48]">
         <div
           className="fixed inset-0 w-screen h-screen bg-[url('/background.jpg')] brightness-50 

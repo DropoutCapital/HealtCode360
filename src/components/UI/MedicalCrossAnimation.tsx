@@ -22,11 +22,19 @@ export default function MedicalCrossAnimation({
   const dots = useMemo(() => {
     const list = [];
     let i = 0;
+    const cutSize = 2; // Número de filas/columnas a recortar de cada extremo
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
         const inVertical = Math.abs(c - midC) <= halfBar;
         const inHorizontal = Math.abs(r - midR) <= halfBar;
-        if (inVertical || inHorizontal) {
+
+        // Recortar los extremos de la cruz
+        const isCutTop = inVertical && r < cutSize;
+        const isCutBottom = inVertical && r >= rows - cutSize;
+        const isCutLeft = inHorizontal && c < cutSize;
+        const isCutRight = inHorizontal && c >= cols - cutSize;
+
+        if ((inVertical || inHorizontal) && !isCutTop && !isCutBottom && !isCutLeft && !isCutRight) {
           list.push({ r, c, i: i++ });
         }
       }

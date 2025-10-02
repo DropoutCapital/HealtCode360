@@ -244,7 +244,7 @@
 //         <a
 //           href="#contact"
 //           onClick={onNavLinkClick}
-//           className="text-2xl text-slate-800 font-semibold hover:text-teal-600"
+//           className="text-2xl text-whiteß font-semibold hover:text-teal-600"
 //         >
 //           Contact us
 //         </a>
@@ -343,12 +343,12 @@ const Header = () => {
     }
   };
 
-  const linkColorClass = isDarkBackground
-    ? "text-gray-100 hover:text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] font-medium"
+  const linkColorClass = isDarkBackground || !hasScrolled
+    ? "text-white/90 hover:text-white"
     : "text-black/90 hover:text-black";
   const activeBrandColor = isDarkBackground ? "text-white" : "text-black";
   const joinUsColor = isDarkBackground
-    ? "text-teal-400 hover:text-teal-300 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+    ? "text-teal-400 hover:text-teal-300"
     : "text-teal-700 hover:text-teal-600";
   const joinUsBorder = isDarkBackground
     ? "border-teal-400/60 group-hover:border-teal-300"
