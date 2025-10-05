@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="relative min-h-screen flex items-start bg-transparent pt-24"
+      className="relative min-h-screen flex items-center bg-transparent"
     >
       <div className="absolute inset-0 z-0 hidden lg:block opacity-10">
         <ArcCircles />
@@ -27,7 +27,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative z-10 w-full h-full flex items-center">
+      <div className="relative z-10 w-full">
         <div className="w-full max-w-7xl mx-auto px-12 lg:px-20">
           <div className="max-w-[600px]">
             {/* H1 */}
