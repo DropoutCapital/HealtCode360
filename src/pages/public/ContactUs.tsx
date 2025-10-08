@@ -28,17 +28,17 @@ const ContactUs = () => {
             <p className="text-white/90 text-lg mb-8">
               Thousands have already unlocked the code. Health no longer has to
               be
-              <br /> expensive, confusing or reactive. <br /> Now it’s simple.
+              <br /> expensive, confusing or reactive. <br /> Now it's simple.
               Covered. Yours.
             </p>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <div className="flex flex-col gap-6">
               <button
                 onClick={() => navigate("/register")}
-                className="bg-[#0EFFEB] text-black cursor-pointer px-6 py-3 sm:px-8 rounded-full hover:bg-teal-700 transition-all duration-200 font-medium text-lg flex items-center gap-3"
+                className="bg-[#0EFFEB] text-black cursor-pointer px-10 py-6 rounded-full hover:bg-teal-700 transition-all duration-200 font-semibold text-xl flex items-center justify-center gap-3 max-w-2xl"
               >
-                Join our waiting list
-                <div className="bg-white rounded-full p-1">
+                Join our waiting list. Let us just check your insurance for maximum discount
+                <div className="bg-white rounded-full p-1 flex-shrink-0">
                   <ArrowUpRight className="w-5 h-5 text-teal-600" />
                 </div>
               </button>
